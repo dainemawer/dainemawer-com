@@ -13,7 +13,6 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import FocusLock from 'react-focus-lock'
-import {signout, useSession} from 'next-auth/client'
 import styles from './Header.module.scss'
 
 /**
@@ -23,7 +22,6 @@ import styles from './Header.module.scss'
  * @constructor
  */
 const Header = () => {
-    const [ session, loading ] = useSession()
     const [open, setOpen] = useState(false);
     const node = useRef(null)
     const button = useRef(null)
@@ -81,7 +79,6 @@ const Header = () => {
                         </g>
                     </svg>
                 </a>
-                {session && <p className={styles.welcome}>✌️ Hey, <strong>Guest</strong></p>}
             </div>
             <nav className={styles.navigation} itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Primary Site Navigation">
                 <FocusLock disabled={!open}>
@@ -112,15 +109,6 @@ const Header = () => {
                                 <a className={clsx(styles['navigation-link'], router.pathname === `/contact` && styles['is-active'] )}>Contact</a>
                             </Link>
                         </li>
-                        {session && (
-                            <li className={styles['navigation-item']}>
-                                <a className={clsx( styles['navigation-link'], 'sign-out')} href={`/api/auth/signout`} onClick={(e) => {e.preventDefault(); signout()}}>
-                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm.707 9.707l-3.3 3.3a.997.997 0 01-1.414 0 .999.999 0 010-1.414L16.586 13H9a1 1 0 110-2h7.586l-1.593-1.593a.999.999 0 111.414-1.414l3.3 3.3a.999.999 0 010 1.414z"/>
-                                    </svg>
-                                </a>
-                            </li>
-                        )}
                     </ul>
                 </FocusLock>
                 <button className={styles['menu-button']} ref={button} onClick={toggleDrawer} aria-expanded={open} aria-haspopup="true" aria-controls={`#${menu}`}>
