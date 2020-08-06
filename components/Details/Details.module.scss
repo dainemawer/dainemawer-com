@@ -1,0 +1,29 @@
+.heading {
+	font-size: 1.5rem;
+	margin: 0;
+}
+
+.list {
+	list-style-type: none;
+	padding: 0;
+	margin: 2rem 0;
+}
+
+.list-item {
+	align-items: center;
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.link-item {
+	background-image: none;
+	border-bottom: 1px solid #313131;
+	color: #313131;
+	display: block;
+	font-size: 1.125rem;
+	padding-bottom: 5px;
+}
+
+.image {
+	margin: 0 1rem 0 0;
+}
