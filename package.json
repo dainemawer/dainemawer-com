@@ -1,0 +1,28 @@
+{
+  "name": "dainemawer-com",
+  "version": "1.0.0",
+  "description": "NextJS and Vercel site for dainemawer.com",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dainemawer/dainemawer-com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dainemawer/dainemawer-com/issues"
+  },
+  "homepage": "https://github.com/dainemawer/dainemawer-com#readme",
+  "dependencies": {
+    "next": "^9.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.10"
+  }
+}
