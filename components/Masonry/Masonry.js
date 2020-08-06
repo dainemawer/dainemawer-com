@@ -12,6 +12,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link'
+import styles from './Masonry.module.scss'
 
 /**
  * Masonry Component
@@ -22,15 +23,15 @@ import Link from 'next/link'
 const Masonry = ({ items }) => {
 
     return (
-        <section>
+        <section className={styles.section}>
             {items && items.map( item => (
-                <article key={item.id}>
+                <article className={styles.card} key={item.id}>
                     <Link as={`/${item.type}/${item.slug}`} href={{ pathname: `/${item.type}/[slug]`, query: {post: item.slug}}} passHref>
-                        <a>
-                            <img src={`${item.featured.url}?fm=webp&q=60`} alt={item.featured.description} />
-                            <div>
-                                <h3>{item.title}</h3>
-                                <p>{item.excerpt}</p>
+                        <a className={styles.permalink}>
+                            <img className={styles.image} src={`${item.featured.url}?fm=webp&q=60`} alt={item.featured.description} />
+                            <div className={styles.content}>
+                                <h3 className={styles.heading}>{item.title}</h3>
+                                <p className={styles.paragraph}>{item.excerpt}</p>
                             </div>
                         </a>
                     </Link>
