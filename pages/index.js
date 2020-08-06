@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <Layout>
             <h1>Home</h1>
-            <Banner />
+            <Banner background="rgba(185,141,79, 0.28)" />
         </Layout>
     );
 }
