@@ -9,13 +9,15 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic'
 import Contentful from "../lib/contentful";
 
 import Banner from '../components/Banner/Banner'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
-import Masonry from '../components/Masonry/Masonry'
 import Meta from '../components/Meta/Meta'
+
+const Masonry = dynamic(() => import('../components/Masonry/Masonry'), { loading: () => <p>Loading...</p> });
 
 
 /**
