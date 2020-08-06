@@ -1,0 +1,142 @@
+.container {
+	margin: 0 auto;
+	max-width: 960px;
+	padding: 2rem 1rem;
+}
+
+.grid {
+	padding: 1rem 0;
+
+	@supports (display: grid) {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+.rule {
+	background-color: #E3E3E3;
+	height: 1px;
+	margin: 0 auto;
+	max-width: 95%;
+
+	@media (min-width: 768px) {
+		max-width: 100%;
+	}
+}
+
+.email {
+	display: flex;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 1.75rem;
+	font-weight: 600;
+	justify-content: center;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		justify-content: flex-start;
+	}
+}
+
+.navigation {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0.875rem;
+
+	@media (min-width: 768px) {
+		justify-content: flex-start;
+		margin-bottom: 0;
+	}
+}
+
+.language-select {
+	justify-content: center;
+
+	@media (min-width: 768px) {
+		justify-content: flex-end;
+	}
+}
+
+.navigation-item {
+	margin-bottom: 0;
+	position: relative;
+
+	&::after {
+		content: " / ";
+		display: inline-block;
+		text-align: center;
+		width: 1.5rem;
+	}
+
+	&:last-child {
+		margin-right: 0;
+
+		&::after {
+		  content: "";
+		  display: none;
+		}
+	}
+}
+
+.navigation-link {
+	background-image: none;
+	border-bottom: 1px solid transparent;
+	color: #313131;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	padding-bottom: 5px;
+	text-decoration: none;
+	text-shadow: none;
+	transition: border-bottom-color 250ms ease-in;
+
+	&:hover,
+	&:focus,
+	&.is-active {
+		border-bottom-color: #313131;
+	}
+}
+
+.navigation-button {
+	background-color: transparent;
+	border: 0;
+	color: #B5B5B5;
+	cursor: pointer;
+	font-size: 0.875rem;
+	font-weight: 400;
+	padding: 0;
+	transition: color 250ms ease-in-out;
+
+	&:hover,
+	&:focus {
+	  color: #313131;
+	}
+}
+
+.is-active {
+	color: #313131;
+}
+
+.location {
+	align-items: center;
+	display: flex;
+	font-size: 0.875rem;
+	justify-content: center;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		justify-content: flex-end;
+	}
+}
+
+.menu {
+	align-items: center;
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
