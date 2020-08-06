@@ -1,0 +1,39 @@
+.grid {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: 1fr;
+
+	@media (min-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.image {
+	border-radius: 8px;
+}
+
+.section {
+	margin-top: 2rem;
+}
+
+.title {
+	margin-bottom: 2rem;
+}
+
+.list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.certification-link {
+	background-image: none;
+	border-bottom: 1px solid #313131;
+	color: #313131;
+	font-weight: 600;
+}
+
+.certification-item {
+	font-size: 1.125rem;
+	margin-bottom: 1.25rem;
+}
