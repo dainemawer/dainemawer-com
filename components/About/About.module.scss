@@ -10,6 +10,11 @@
 
 .image {
 	border-radius: 8px;
+  	margin-bottom: 0;
+
+  	@media (min-width: 768px) {
+	  margin-bottom: 1rem;
+	}
 }
 
 .section {
@@ -34,6 +39,10 @@
 }
 
 .certification-item {
-	font-size: 1.125rem;
+	font-size: 1rem;
 	margin-bottom: 1.25rem;
+
+  	@media(min-width: 768px) {
+	  font-size: 1.125rem;
+	}
 }

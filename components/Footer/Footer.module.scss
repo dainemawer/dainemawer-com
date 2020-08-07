@@ -1,7 +1,11 @@
 .container {
 	margin: 0 auto;
 	max-width: 960px;
-	padding: 2rem 1rem;
+	padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+  	@media (min-width: 768px) {
+	  padding: 2rem 1rem;
+	}
 }
 
 .grid {
@@ -31,12 +35,13 @@
 .email {
 	display: flex;
 	font-family: 'Work Sans', sans-serif;
-	font-size: 1.75rem;
+	font-size: 1.5rem;
 	font-weight: 600;
 	justify-content: center;
 	margin: 0;
 
 	@media (min-width: 768px) {
+	  	font-size: 1.75rem;
 		justify-content: flex-start;
 	}
 }

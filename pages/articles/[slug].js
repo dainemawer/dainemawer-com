@@ -17,10 +17,17 @@ import Author from '../../components/Author/Author'
 import Hero from '../../components/Hero/Hero'
 import Layout from '../../components/Layout/Layout'
 import Meta from '../../components/Meta/Meta'
+import styles from "../../components/Masonry/Masonry.module.scss";
 
 const options = {
     renderNode: {
-        'embedded-asset-block': (node) => <img src={`${node.data.target.fields.file.url}?fm=webp&q=60`} />
+        'embedded-asset-block': (node) => (
+            <picture>
+                <source srcSet={`${node.data.target.fields.file.url}?fm=webp&q=60`} type='image/webp' />
+                <source srcSet={`${node.data.target.fields.file.url}?q=60`} type='image/jpg' />
+                <img className={styles.image} src={`${node.data.target.fields.file.url}?q=60`} loading="lazy" alt="" />
+            </picture>
+        )
     }
 }
 
@@ -49,7 +56,11 @@ const Article = ({ article }) => {
                             <div>
                                 <time dateTime={article.published}>{article.published}</time>
                             </div>
-                            <img src={`${article.hero.url}?fm=webp&q=60`} alt={article.hero.description} />
+                            <picture>
+                                <source srcSet={`${article.hero.url}?fm=webp&q=60`} type='image/webp' />
+                                <source srcSet={`${article.hero.url}?q=60`} type='image/jpg' />
+                                <img className={styles.image} src={`${article.hero.url}?q=60`} loading="lazy" alt={article.hero.description} />
+                            </picture>
                             <meta itemProp="url" content={article.hero.url} />
                             <meta itemProp="width" content={article.hero.width} />
                             <meta itemProp="height" content={article.hero.height} />

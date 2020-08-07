@@ -1,3 +1,7 @@
+.form {
+	margin-bottom: 0;
+}
+
 .button {
 	background: transparent;
 	border: 0;
@@ -54,6 +58,10 @@
 	margin-bottom: 2rem;
 	position: relative;
 
+  	&:last-child {
+	  margin-bottom: 0;
+	}
+
 	&.form-error {
 		.error {
 			color: #af4f4f;
@@ -71,11 +79,12 @@
 
 .article {
 	display: grid;
-	grid-gap: 2rem;
+	grid-gap: 1rem;
 	grid-template-columns: 1fr;
 	padding: 1rem 0;
 
 	@media (min-width: 768px) {
+	  	grid-gap: 2rem;
 		grid-template-columns: 4fr 8fr;
 	}
 }
