@@ -82,7 +82,7 @@ const Header = () => {
             </div>
             <nav className={styles.navigation} itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Primary Site Navigation">
                 <FocusLock disabled={!open}>
-                    <ul className={styles.menu} id={menu} open={open} ref={node}>
+                    <ul className={clsx(styles.menu, open ? styles.open : '')} id={menu} ref={node}>
                         <h2 className={styles['menu-title']}>Menu</h2>
                         <li className={styles['navigation-item']}>
                             <Link href="/" passHref>

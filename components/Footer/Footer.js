@@ -29,16 +29,16 @@ const Footer = () => {
                 <nav className={styles.navigation} itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Footer Social Navigation">
                     <ul className={styles.menu}>
                         <li className={styles['navigation-item']}>
-                            <a className={styles['navigation-link']} href="https://twitter.com/dainemawer" rel="noopener noreferrer">Twitter</a>
+                            <a className={styles['navigation-link']} href="https://twitter.com/dainemawer" target="_blank" rel="noopener noreferrer">Twitter</a>
                         </li>
                         <li className={styles['navigation-item']}>
-                            <a className={styles['navigation-link']} href="https://github.com/dainemawer" rel="noopener noreferrer">Github</a>
+                            <a className={styles['navigation-link']} href="https://github.com/dainemawer" target="_blank" rel="noopener noreferrer">Github</a>
                         </li>
                         <li className={styles['navigation-item']}>
-                            <a className={styles['navigation-link']} href="https://linkedin.com/in/dainemawer/" rel="noopener noreferrer">LinkedIn</a>
+                            <a className={styles['navigation-link']} href="https://linkedin.com/in/dainemawer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         </li>
                         <li className={styles['navigation-item']}>
-                            <a className={styles['navigation-link']} href="https://linkedin.com/in/dainemawer/" rel="noopener noreferrer">Resume</a>
+                            <a className={styles['navigation-link']} href="https://linkedin.com/in/dainemawer/" target="_blank" rel="noopener noreferrer">Resume</a>
                         </li>
                     </ul>
                 </nav>

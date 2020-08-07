@@ -163,8 +163,8 @@ const Contact = () => {
                             If you’re looking for corporate training / education
                             in web technologies, take a look at my courseware."
                     title="I write and teach too!"
-                    label="Journal"
-                    link="/journal"
+                    label="Articles"
+                    link="/articles"
                 />
             </Layout>
         </>
