@@ -6,11 +6,13 @@ import typography from '../lib/typography'
 class MyDocument extends Document {
     render() {
         return(
-            <Html lang="en" prefix='og: http://ogp.me/ns#'>
+            <Html lang="en" dir="ltr" prefix='og: http://ogp.me/ns#'>
                 <Head>
                     <meta name="theme-color" content="#ffffff" />
                     <meta name="msapplication-TileColor" content="#da532c" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
+                    <link rel="alternate" type="application/rss+xml" title="RSS for Daine Mawer" href="https://dainemawer.com/rss" />
 
                     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
                     <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
