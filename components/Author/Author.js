@@ -16,7 +16,7 @@ const Author = () => {
         <section itemScope itemType="https://schema.org/CreativeWork">
             <div className={styles.section} itemProp="author" itemScope itemType="https://schema.org/Person">
                 <div className="author-card-pic">
-                    <img className={styles.image} width="80" height="80" src="/author.jpg" itemProp="image" alt="placeholder image" />
+                    <img className={styles.image} src="/author.jpg" itemProp="image" alt="placeholder image" />
                 </div>
                 <div className={styles.info}>
                     <h3 className={styles.title}>

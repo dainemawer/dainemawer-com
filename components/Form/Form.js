@@ -20,7 +20,7 @@ import styles from './Form.module.scss'
  */
 const Form = ({ submit, children }) => {
     return (
-        <form role="form" aria-label="Contact Form" id="contact-form" onSubmit={submit} autoComplete="off">
+        <form className={styles.form} role="form" aria-label="Contact Form" id="contact-form" onSubmit={submit} autoComplete="off">
             <fieldset className={styles.fieldset} form="contact-form">
                 <legend className="screen-reader-text">Send me a message</legend>
                 {children}
