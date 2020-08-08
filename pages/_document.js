@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { TypographyStyle } from 'react-typography'
-import typography from '../lib/typography'
+import typography from '@lib/typography'
 
 class MyDocument extends Document {
     render() {

@@ -18,10 +18,8 @@ import Head from 'next/head'
  * @returns {null}
  * @constructor
  */
-const Meta = ({ title, description, url }) => {
-    return (
-        <Head>
-
+const Meta = ({ title, description, url }) => (
+    <Head>
             <title>{title}</title>
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
             <meta name="description" content={description} />
@@ -43,8 +41,7 @@ const Meta = ({ title, description, url }) => {
             <meta name="twitter:title" content="Daine Mawer | Frontend Engineer" />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content="/og-image.png" />
-        </Head>
-    );
-}
+    </Head>
+);
 
 export default Meta;

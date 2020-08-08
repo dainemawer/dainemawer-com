@@ -10,39 +10,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic'
-import Contentful from "../lib/contentful";
+import Contentful from "@lib/contentful";
 
-import Banner from '../components/Banner/Banner'
-import Hero from '../components/Hero/Hero'
-import Layout from '../components/Layout/Layout'
-import Meta from '../components/Meta/Meta'
+import Banner from '@components/Banner/Banner'
+import Hero from '@components/Hero/Hero'
+import Layout from '@components/Layout/Layout'
+import Loading from '@components/Layout/Layout'
+import Meta from '@components/Meta/Meta'
 
-const Masonry = dynamic(() => import('../components/Masonry/Masonry'), { loading: () => <p>Loading...</p> });
+const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: () => <Loading /> });
 
-
-/**
- * Projects Page
- *
- * @returns {null}
- * @constructor
- */
-const Projects = ({ projects }) => {
-
-    return (
-        <>
-            <Meta
-                title="Projects | Daine Mawer"
-                description="A collection of some of the work I’m most proud of."
-                url="https://dainemawer.com/projects"
-            />
-            <Layout>
-                <Hero title="Projects." subtitle="A collection of some of the work I’m most proud of." />
-                {projects && <Masonry items={projects} />}
-                <Banner background="rgba(185,141,79, 0.28)" />
-            </Layout>
-        </>
-    );
-}
+const Projects = ({ projects }) => (
+    <>
+        <Meta
+            title="Projects | Daine Mawer"
+            description="A collection of some of the work I’m most proud of."
+            url="https://dainemawer.com/projects"
+        />
+        <Layout>
+            <Hero title="Projects." subtitle="A collection of some of the work I’m most proud of." />
+            {projects && <Masonry items={projects} />}
+            <Banner background="rgba(185,141,79, 0.28)" />
+        </Layout>
+    </>
+);
 
 export async function getServerSideProps() {
     const ProjectsAPI = new Contentful('projects');

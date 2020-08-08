@@ -9,7 +9,7 @@
  */
 
 import React from 'react'
-import Contentful from "../lib/contentful";
+import Contentful from "@lib/contentful";
 
 const RSSFeed = articles => {
     let items = ''

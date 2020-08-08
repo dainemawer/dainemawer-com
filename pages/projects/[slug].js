@@ -10,14 +10,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router'
-import Contentful from "../../lib/contentful";
+import Contentful from "@lib/contentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import Info from '../../components/Info/Info'
-import Hero from '../../components/Hero/Hero'
-import Layout from '../../components/Layout/Layout'
-import Meta from '../../components/Meta/Meta'
-import styles from "../../components/Masonry/Masonry.module.scss";
+import Info from '@components/Info/Info'
+import Hero from '@components/Hero/Hero'
+import Layout from '@components/Layout/Layout'
+import Meta from '@components/Meta/Meta'
+import styles from "@components/Masonry/Masonry.module.scss";
 
 const options = {
     renderNode: {
@@ -92,11 +92,18 @@ export async function getServerSideProps(context) {
 }
 
 Project.propTypes = {
-
-}
-
-Project.defaultProps = {
-
+    project: PropTypes.shape({
+        title: PropTypes.string,
+        excerpt: PropTypes.string,
+        published: PropTypes.string,
+        modified: PropTypes.string,
+        hero: PropTypes.shape({
+            description: PropTypes.string,
+            url: PropTypes.string,
+            width: PropTypes.number,
+            height: PropTypes.number,
+        })
+    }).isRequired
 }
 
 export default Project;

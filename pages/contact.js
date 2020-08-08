@@ -12,21 +12,15 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import clsx from 'clsx'
 import {useForm} from "react-hook-form"
 
-import Banner from '../components/Banner/Banner'
-import Hero from '../components/Hero/Hero'
-import Layout from '../components/Layout/Layout'
-import Meta from '../components/Meta/Meta'
-import Details from '../components/Details/Details'
-import Form from '../components/Form/Form'
+import Banner from '@components/Banner/Banner'
+import Hero from '@components/Hero/Hero'
+import Layout from '@components/Layout/Layout'
+import Meta from '@components/Meta/Meta'
+import Details from '@components/Details/Details'
+import Form from '@components/Form/Form'
 
-import styles from '../components/Form/Form.module.scss'
+import styles from '@components/Form/Form.module.scss'
 
-/**
- * Contact Page
- *
- * @returns {null}
- * @constructor
- */
 const Contact = () => {
     const recaptchaRef = useRef(null);
     const {register, errors, handleSubmit} = useForm();

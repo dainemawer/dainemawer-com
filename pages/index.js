@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Banner from '../components/Banner/Banner'
-import Hero from '../components/Hero/Hero'
-import Layout from '../components/Layout/Layout'
-import Meta from '../components/Meta/Meta'
-import Contentful from "../lib/contentful";
-import {filterItems} from '../lib/filter';
+
+import Contentful from "@lib/contentful";
+import {filterItems} from '@lib/filter';
 import dynamic from 'next/dynamic'
 
-const Masonry = dynamic(() => import('../components/Masonry/Masonry'), { loading: () => <p>Loading...</p> });
+import Banner from '@components/Banner/Banner'
+import Hero from '@components/Hero/Hero'
+import Layout from '@components/Layout/Layout'
+import Loading from '@components/Loading/Loading'
+import Meta from '@components/Meta/Meta'
+
+const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: () => <Loading /> });
 
 const Home = ({ articles, projects }) => {
 
@@ -30,6 +33,72 @@ const Home = ({ articles, projects }) => {
             </Layout>
         </>
     );
+}
+
+Home.propTypes = {
+    articles: PropTypes.arrayOf(
+        PropTypes.shape({
+            published: PropTypes.string,
+            modified: PropTypes.string,
+            id: PropTypes.number,
+            title: PropTypes.string,
+            excerpt: PropTypes.string,
+            content: PropTypes.shape({
+                data: PropTypes.object,
+                content: PropTypes.array,
+                nodeType: PropTypes.string,
+            }),
+            slug: PropTypes.string,
+            type: PropTypes.string,
+            hero: PropTypes.shape({
+                description: PropTypes.string,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                height: PropTypes.number,
+                width: PropTypes.number,
+            }),
+            featured: PropTypes.shape({
+                description: PropTypes.string,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                height: PropTypes.number,
+                width: PropTypes.number,
+            })
+        })
+    ),
+    projects: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string,
+            hidden: PropTypes.bool,
+            excerpt: PropTypes.string,
+            hero: PropTypes.shape({
+                description: PropTypes.string,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                height: PropTypes.number,
+                width: PropTypes.number,
+            }),
+            featured: PropTypes.shape({
+                description: PropTypes.string,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                height: PropTypes.number,
+                width: PropTypes.number,
+            }),
+            content: PropTypes.shape({
+                data: PropTypes.object,
+                content: PropTypes.array,
+                nodeType: PropTypes.string,
+            }),
+            client: PropTypes.string,
+            agency: PropTypes.string,
+            date: PropTypes.string,
+            role: PropTypes.string,
+            id: PropTypes.number,
+            slug: PropTypes.string,
+            type: PropTypes.string,
+        })
+    ),
 }
 
 export async function getServerSideProps(context) {
