@@ -1,0 +1,50 @@
+/**
+ * Variables
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+/* Colour */
+$c-mine-shaft: #313131;
+$c-mercury: #e3e3e3;
+$c-silver: #bfbfbf;
+$c-white: #ffffff;
+$c-black: #000000;
+$c-nobel: #b5b5b5;
+$c-matrix: #Af4f4f;
+
+/* Font Family */
+$ff-family-primary: 'Work Sans',sans-serif;
+
+/* Font Sizes */
+$fs-small: 0.875rem;
+$fs-normal: 1rem;
+$fs-lead: 1.125rem;
+$fs-xlead: 1.25rem;
+$fs-large: 1.5rem;
+$fs-xlarge: 1.75rem;
+$fs-xxlarge: 2rem;
+
+/* Font Weight */
+$fw-normal: 400;
+$fw-lead: 500;
+$fw-bold: 600;
+$fw-book: 700;
+$fw-bolder: 800;
+$fw-black: 900;
+
+/* Margin */
+$s-tiny: 0.5rem;
+$s-small: 0.875rem;
+$s-normal: 1rem;
+$s-medium: 1.25rem;
+$s-large: 1.5rem;
+$s-xlarge: 2rem;
+$s-xxlarge: 3rem;
+
+/* Media Queries */
+$bp-small: 480px;
+$bp-medium: 768px;
+$bp-large: 1024px;

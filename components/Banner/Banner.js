@@ -10,32 +10,22 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link'
 import styles from './Banner.module.scss'
 
-/**
- * Banner Component
- *
- * @returns {null}
- * @constructor
- */
-
-import Link from 'next/link'
-
-const Banner = ({ background, content, title, link, label }) => {
-    return (
-        <section className={styles.section} style={{ backgroundColor: background }}>
-            {title && <h3 className={styles.title}>{title}</h3>}
-            {content && <p className={styles.paragraph}>{content}</p>}
-            {link && (
-                <p className={styles.wrap}>
-                    <Link href={link} passHref>
-                        {label && <a className={styles.permalink}>{label}</a>}
-                    </Link>
-                </p>
-            )}
-        </section>
-    );
-}
+const Banner = ({ background, content, title, link, label }) => (
+    <section className={styles.section} style={{ backgroundColor: background }}>
+        {title && <h3 className={styles.title}>{title}</h3>}
+        {content && <p className={styles.paragraph}>{content}</p>}
+        {link && (
+            <p className={styles.wrap}>
+                <Link href={link} passHref>
+                    {label && <a className={styles.permalink}>{label}</a>}
+                </Link>
+            </p>
+        )}
+    </section>
+)
 
 Banner.propTypes = {
     background: PropTypes.string,

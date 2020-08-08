@@ -1,12 +1,22 @@
+/**
+ * Info Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .list {
 	display: flex;
 	list-style-type: none;
 	padding: 0;
-	margin: 0 0 1rem 0;
+	margin: 0 0 $s-normal 0;
 }
 
 .list-item {
-	margin-right: 1rem;
+	margin-right: $s-normal;
 
 	&:last-child {
 		margin-right: 0;
@@ -14,7 +24,7 @@
 }
 
 .strong {
-	font-weight: 800;
+	font-weight: $fw-bolder;
 	text-transform: uppercase;
 }
 

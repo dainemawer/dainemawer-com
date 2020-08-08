@@ -1,10 +1,20 @@
+/**
+ * Header Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .header {
 	margin: 0 auto;
 	max-width: 960px;
-	padding: 2rem 1.5rem;
+	padding: $s-xlarge $s-large;
 
-	@media (min-width: 768px) {
-		padding: 2rem 1rem;
+	@media (min-width: $bp-medium) {
+		padding: $s-xlarge $s-normal;
 	}
 
 	@supports (display: grid) {
@@ -14,7 +24,6 @@
 }
 
 .logo-link {
-	background-image: none;
 	display: flex;
 	opacity: 1;
 	transition: opacity 250ms ease-in-out;
@@ -32,7 +41,7 @@
 }
 
 .welcome {
-	font-size: 0.875rem;
+	font-size: $fs-small;
 	margin: 0 0 0 1rem;
 }
 
@@ -43,10 +52,10 @@
 }
 
 .navigation-item {
-	margin-bottom: 1rem;
-	margin-right: 1rem;
+	margin-bottom: $s-normal;
+	margin-right: $s-normal;
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		margin-bottom: 0;
 	}
 
@@ -56,25 +65,22 @@
 }
 
 .navigation-link {
-	background-image: none;
 	border-bottom: 1px solid transparent;
-	color: #313131;
-	font-family: 'Work Sans',sans-serif;
-	font-size: 1rem;
-	font-weight: 500;
+	color: $c-mine-shaft;
+	font-family: $ff-family-primary;
+	font-size: $fs-normal;
+	font-weight: $fw-lead;
 	padding-bottom: 5px;
-	text-decoration: none;
-	text-shadow: none;
 	transition: border-bottom-color 250ms ease-in;
 
-	@media (min-width: 768px) {
-		font-size: 0.875rem;
+	@media (min-width: $bp-medium) {
+		font-size: $fs-small;
 	}
 
 	&:hover,
 	&:focus,
 	&.is-active {
-		border-bottom-color: #313131;
+		border-bottom-color: $c-mine-shaft;
 		outline: 0;
 	}
 
@@ -94,15 +100,15 @@
 
 .menu {
 	align-items: center;
-	background-color: #fff;
-	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	background-color: $c-white;
+	box-shadow: 0 0 40px rgba($c-black, 0.15);
 	height: 100vh;
 	list-style-type: none;
 	left: 0;
 	margin: 0;
 	max-width: 320px;
 	opacity: 0;
-	padding: 2rem;
+	padding: $s-xlarge;
 	position: fixed;
 	top: 0;
 	transition: visibility 250ms ease-in, opacity 250ms ease-in, transform 250ms ease-in-out;
@@ -117,7 +123,7 @@
 		visibility: visible;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		background-color: transparent;
 		box-shadow: none;
 		display: flex;
@@ -146,16 +152,16 @@
 		outline: 0;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		display: none;
 	}
 }
 
 .menu-title {
 	display: block;
-	margin: 0 0 2rem 0;
+	margin: 0 0 $s-xlarge 0;
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		display: none;
 	}
 }

@@ -1,9 +1,19 @@
+/**
+ * About Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .grid {
 	display: grid;
-	grid-gap: 2rem;
+	grid-gap: $s-xlarge;
 	grid-template-columns: 1fr;
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		grid-template-columns: 1fr 1fr;
 	}
 }
@@ -12,17 +22,17 @@
 	border-radius: 8px;
   	margin-bottom: 0;
 
-  	@media (min-width: 768px) {
-	  margin-bottom: 1rem;
+  	@media (min-width: $bp-medium) {
+	  margin-bottom: $s-normal;
 	}
 }
 
 .section {
-	margin-top: 2rem;
+	margin-top: $s-xlarge;
 }
 
 .title {
-	margin-bottom: 2rem;
+	margin-bottom: $s-xlarge;
 }
 
 .list {
@@ -33,16 +43,16 @@
 
 .certification-link {
 	background-image: none;
-	border-bottom: 1px solid #313131;
-	color: #313131;
-	font-weight: 600;
+	border-bottom: 1px solid $c-mine-shaft;
+	color: $c-mine-shaft;
+	font-weight: $fw-bold;
 }
 
 .certification-item {
-	font-size: 1rem;
-	margin-bottom: 1.25rem;
+	font-size: $fs-normal;
+	margin-bottom: $s-medium;
 
-  	@media(min-width: 768px) {
-	  font-size: 1.125rem;
+  	@media(min-width: $bp-medium) {
+	  font-size: $fs-lead;
 	}
 }

@@ -11,6 +11,9 @@
 
 const sgMail = require('@sendgrid/mail');
 
+const EMAIL = 'hello@dainemawer.com';
+const TEMPLATE_ID = 'd-914f508fedc04332b3ce4804c4a99453';
+
 export default async (req, res) => {
     let recaptcha;
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -18,10 +21,10 @@ export default async (req, res) => {
     const endpoint = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
 
     const content = {
-        to: 'hello@dainemawer.com',
-        from: 'hello@dainemawer.com',
+        to: EMAIL,
+        from: EMAIL,
         subject: `${subject} | dainemawer.com`,
-        templateId: 'd-914f508fedc04332b3ce4804c4a99453',
+        templateId: TEMPLATE_ID,
         dynamic_template_data: {
             name,
             email,

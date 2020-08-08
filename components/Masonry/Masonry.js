@@ -14,43 +14,40 @@ import PropTypes from 'prop-types';
 import Link from 'next/link'
 import styles from './Masonry.module.scss'
 
-/**
- * Masonry Component
- *
- * @returns {null}
- * @constructor
- */
-const Masonry = ({ items }) => {
-
-    return (
-        <section className={styles.section}>
-            {items && items.map( item => (
-                <article className={styles.card} key={item.id}>
-                    <Link as={`/${item.type}/${item.slug}`} href={{ pathname: `/${item.type}/[slug]`, query: {post: item.slug}}} passHref>
-                        <a className={styles.permalink}>
-                            <picture>
-                                <source srcSet={`${item.featured.url}?fm=webp&q=60`} type='image/webp' />
-                                <source srcSet={`${item.featured.url}?q=60`} type='image/jpg' />
-                                <img className={styles.image} src={`${item.featured.url}?q=60`} loading="lazy" alt={item.featured.description} />
-                            </picture>
-                            <div className={styles.content}>
-                                <h3 className={styles.heading}>{item.title}</h3>
-                                <p className={styles.paragraph}>{item.excerpt}</p>
-                            </div>
-                        </a>
-                    </Link>
-                </article>
-            ))}
-        </section>
-    )
-}
+const Masonry = ({ items }) => (
+    <section className={styles.section}>
+        {items && items.map( item => (
+            <article className={styles.card} key={item.id}>
+                <Link as={`/${item.type}/${item.slug}`} href={{ pathname: `/${item.type}/[slug]`, query: {post: item.slug}}} passHref>
+                    <a className={styles.permalink}>
+                        <picture>
+                            <source srcSet={`${item.featured.url}?fm=webp&q=60`} type='image/webp' />
+                            <source srcSet={`${item.featured.url}?q=60`} type='image/jpg' />
+                            <img className={styles.image} src={`${item.featured.url}?q=60`} loading="lazy" alt={item.featured.description} />
+                        </picture>
+                        <div className={styles.content}>
+                            <h3 className={styles.heading}>{item.title}</h3>
+                            <p className={styles.paragraph}>{item.excerpt}</p>
+                        </div>
+                    </a>
+                </Link>
+            </article>
+        ))}
+    </section>
+)
 
 Masonry.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({})),
-}
-
-Masonry.defaultProps = {
-    items: [],
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        type: PropTypes.string,
+        slug: PropTypes.string,
+        title: PropTypes.string,
+        excerpt: PropTypes.string,
+        featured: PropTypes.shape({
+            url: PropTypes.string,
+            description: PropTypes.string,
+        }),
+    })).isRequired,
 }
 
 export default Masonry;

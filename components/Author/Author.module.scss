@@ -1,13 +1,21 @@
+/**
+ * Author Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .link {
-	background-image: none;
-	color: #313131;
-	text-decoration: none;
+	color: $c-mine-shaft;
 }
 
 .section {
 	align-items: center;
 	display: flex;
-	margin: 3rem auto 1rem auto;
+	margin: $s-xxlarge auto $s-normal auto;
 	max-width: 660px;
 }
 
@@ -19,12 +27,12 @@
 }
 
 .info {
-	margin-left: 1rem;
+	margin-left: $s-normal;
 }
 
 .title {
-	font-size: 1.125rem;
-	margin: 0 0 0.5rem 0;
+	font-size: $fs-lead;
+	margin: 0 0 $s-tiny 0;
 }
 
 .description {

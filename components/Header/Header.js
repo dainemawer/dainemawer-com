@@ -9,25 +9,18 @@
  *
  */
 import React, { useState, useEffect, useRef } from 'react';
-import clsx from 'clsx'
-import Link from 'next/link'
 import {useRouter} from 'next/router'
 import FocusLock from 'react-focus-lock'
+import clsx from 'clsx'
+import Link from 'next/link'
 import styles from './Header.module.scss'
 
-/**
- * Header Component
- *
- * @returns {null}
- * @constructor
- */
 const Header = () => {
     const [open, setOpen] = useState(false);
     const node = useRef(null)
     const button = useRef(null)
     const menu = 'primaryNavigation';
     const router = useRouter();
-
 
     const toggleDrawer = () => {
         setOpen(!open);

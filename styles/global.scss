@@ -1,4 +1,13 @@
+/**
+ * Global Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
 @import "~normalize.css";
+@import "variables";
 
 * {
 	-webkit-font-smoothing: antialiased;
@@ -10,12 +19,12 @@ body.locked {
 }
 
 .page-content p {
-	font-size: 1.125rem;
+	font-size: $fs-lead;
 	line-height: 1.5;
 }
 
 .page-project p {
-	font-size: 1.125rem;
+	font-size: $fs-lead;
 	line-height: 1.5;
 	margin-left: auto;
 	margin-right: auto;
@@ -33,4 +42,23 @@ body.locked {
 	position: absolute;
 	width: 1px;
 	word-wrap: normal !important;
+
+  	&:focus {
+	  background-color: #eee;
+	  clip: auto !important;
+	  clip-path: none;
+	  color: #444;
+	  display: block;
+	  font-size: 1em;
+	  height: auto;
+	  left: 5px;
+	  line-height: normal;
+	  outline: 0;
+	  padding: 15px 23px 14px;
+	  text-decoration: none;
+	  top: 5px;
+	  width: auto;
+	  z-index: 999;
+	}
+
 }
