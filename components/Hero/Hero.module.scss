@@ -1,20 +1,30 @@
+/**
+ * Hero Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .title {
-	font-size: 2rem;
-	font-weight: 700;
+	font-size: $fs-xxlarge;
+	font-weight: $fw-book;
 	margin: 0 0 0.25rem 0;
 }
 
 .sub-title {
-	font-size: 2rem;
+	font-size: $fs-xxlarge;
 	line-height: 1.25;
 	max-width: 530px;
 	margin: 0;
 }
 
 .section {
-	padding: 1rem 0 2rem 0;
+	padding: $s-normal 0 $s-xlarge 0;
 
-  	@media (min-width: 768px) {
-		padding: 2rem 0;
+  	@media (min-width: $bp-medium) {
+		padding: $s-xlarge 0;
 	}
 }

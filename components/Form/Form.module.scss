@@ -1,3 +1,13 @@
+/**
+ * Form Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .form {
 	margin-bottom: 0;
 }
@@ -5,9 +15,9 @@
 .button {
 	background: transparent;
 	border: 0;
-	border-bottom: 1px solid #313131;
+	border-bottom: 1px solid $c-mine-shaft;
 	cursor: pointer;
-	font-size: 1.125rem;
+	font-size: $fs-lead;
 	padding: 0 0 5px 0;
 }
 
@@ -16,33 +26,33 @@
 }
 
 .input {
-	border: 1px solid #bfbfbf;
+	border: 1px solid $c-silver;
 	padding: 1rem;
 	transition: border-color 250ms ease-in;
 	width: 100%;
 
 	&:focus {
-		border-color: #313131;
+		border-color: $c-mine-shaft;
 		outline: 0;
 	}
 }
 
 .textarea {
-	border: 1px solid #bfbfbf;
-	padding: 1rem 10rem 1rem 1rem;
+	border: 1px solid $c-silver;
+	padding: $s-normal 10rem $s-normal $s-normal;
 	resize: none;
 	transition: border-color 250ms ease-in;
 	width: 100%;
 
 	&:focus {
-		border-color: #313131;
+		border-color: $c-mine-shaft;
 		outline: 0;
 	}
 }
 
 .error {
-	background-color: #fff;
-	font-size: 0.875rem !important;
+	background-color: $c-white;
+	font-size: $fs-small !important;
 	position: absolute;
 	top: 50%;
 	right: 1rem;
@@ -55,7 +65,7 @@
 }
 
 .group {
-	margin-bottom: 2rem;
+	margin-bottom: $s-xlarge;
 	position: relative;
 
   	&:last-child {
@@ -64,7 +74,7 @@
 
 	&.form-error {
 		.error {
-			color: #af4f4f;
+			color: $c-matrix;
 		}
 	}
 
@@ -72,7 +82,7 @@
 
 		.error {
 			max-width: 150px;
-			top: 3rem;
+			top: $s-xxlarge;
 		}
 	}
 }
@@ -81,10 +91,10 @@
 	display: grid;
 	grid-gap: 1rem;
 	grid-template-columns: 1fr;
-	padding: 1rem 0;
+	padding: $s-normal 0;
 
-	@media (min-width: 768px) {
-	  	grid-gap: 2rem;
+	@media (min-width: $bp-medium) {
+	  	grid-gap: $s-xlarge;
 		grid-template-columns: 4fr 8fr;
 	}
 }

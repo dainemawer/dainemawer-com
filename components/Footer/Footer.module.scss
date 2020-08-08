@@ -1,47 +1,57 @@
+/**
+ * Footer Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .container {
 	margin: 0 auto;
 	max-width: 960px;
-	padding: 2rem 1.5rem 1.5rem 1.5rem;
+	padding: $s-xlarge $s-large $s-large $s-large;
 
-  	@media (min-width: 768px) {
-	  padding: 2rem 1rem;
+  	@media (min-width: $bp-medium) {
+	  padding: $s-xlarge $s-normal;
 	}
 }
 
 .grid {
-	padding: 1rem 0;
+	padding: $s-normal 0;
 
 	@supports (display: grid) {
 		display: grid;
 		grid-template-columns: 1fr;
 
-		@media (min-width: 768px) {
+		@media (min-width: $bp-medium) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 }
 
 .rule {
-	background-color: #E3E3E3;
+	background-color: $c-mercury;
 	height: 1px;
 	margin: 0 auto;
 	max-width: 95%;
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		max-width: 100%;
 	}
 }
 
 .email {
 	display: flex;
-	font-family: 'Work Sans', sans-serif;
-	font-size: 1.5rem;
-	font-weight: 600;
+	font-family: $ff-family-primary;
+	font-size: $fs-large;
+	font-weight: $fw-bold;
 	justify-content: center;
 	margin: 0;
 
-	@media (min-width: 768px) {
-	  	font-size: 1.75rem;
+	@media (min-width: $bp-medium) {
+	  	font-size: $fs-xlarge;
 		justify-content: flex-start;
 	}
 }
@@ -50,9 +60,9 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 0.875rem;
+	margin-bottom: $s-small;
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		justify-content: flex-start;
 		margin-bottom: 0;
 	}
@@ -61,7 +71,7 @@
 .language-select {
 	justify-content: center;
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		justify-content: flex-end;
 	}
 }
@@ -88,52 +98,54 @@
 }
 
 .navigation-link {
-	background-image: none;
 	border-bottom: 1px solid transparent;
-	color: #313131;
+	color: $c-mine-shaft;
 	font-family: 'Work Sans', sans-serif;
-	font-size: 0.875rem;
-	font-weight: 400;
+	font-size: $fs-small;
+	font-weight: $fw-normal;
 	padding-bottom: 5px;
-	text-decoration: none;
-	text-shadow: none;
 	transition: border-bottom-color 250ms ease-in;
 
 	&:hover,
 	&:focus,
 	&.is-active {
-		border-bottom-color: #313131;
+		border-bottom-color: $c-mine-shaft;
+	  	outline: 0;
 	}
 }
 
 .navigation-button {
 	background-color: transparent;
 	border: 0;
-	color: #B5B5B5;
+  	border-bottom: 1px solid transparent;
+	color: $c-nobel;
 	cursor: pointer;
-	font-size: 0.875rem;
-	font-weight: 400;
+	font-size: $fs-small;
+	font-weight: $fw-normal;
 	padding: 0;
 	transition: color 250ms ease-in-out;
 
 	&:hover,
 	&:focus {
-	  color: #313131;
+	  border-bottom-color: $c-mine-shaft;
+	  color: $c-mine-shaft;
+	  outline: 0;
 	}
 }
 
 .is-active {
-	color: #313131;
+  	border-bottom-color: $c-mine-shaft;
+	color: $c-mine-shaft;
 }
 
 .location {
 	align-items: center;
 	display: flex;
-	font-size: 0.875rem;
+	font-size: $fs-small;
 	justify-content: center;
 	margin: 0;
 
-	@media (min-width: 768px) {
+	@media (min-width: $bp-medium) {
 		justify-content: flex-end;
 	}
 }
