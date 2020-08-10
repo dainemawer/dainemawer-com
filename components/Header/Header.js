@@ -8,11 +8,15 @@
  * @version 1.0
  *
  */
-import React, { useState, useEffect, useRef } from 'react';
+
+// Dependencies
+import React, { useState, useEffect, useRef } from 'react'
 import {useRouter} from 'next/router'
 import FocusLock from 'react-focus-lock'
 import clsx from 'clsx'
 import Link from 'next/link'
+
+// Styles
 import styles from './Header.module.scss'
 
 const Header = () => {

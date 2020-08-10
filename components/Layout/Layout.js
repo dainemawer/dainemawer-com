@@ -8,10 +8,16 @@
  * @version 1.0
  *
  */
+
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+
+// Components
 import Header from '@components/Header/Header'
 import Footer from '@components/Footer/Footer'
+
+// Styles
 import styles from './Layout.module.scss'
 
 const Layout = ({ children }) => (

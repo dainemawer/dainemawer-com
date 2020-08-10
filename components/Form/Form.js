@@ -8,8 +8,12 @@
  * @version 1.0
  *
  */
-import React from 'react';
-import PropTypes from 'prop-types';
+
+// Dependencies
+import React from 'react'
+import PropTypes from 'prop-types'
+
+// Styles
 import styles from './Form.module.scss'
 
 const Form = ({ submit, children }) => (
@@ -22,12 +26,11 @@ const Form = ({ submit, children }) => (
 );
 
 Form.propTypes = {
-    children: PropTypes.arrayOf,
+    children: PropTypes.node.isRequired,
     submit: PropTypes.func,
 }
 
 Form.defaultProps = {
-    children: [],
     submit: () => {},
 }
 

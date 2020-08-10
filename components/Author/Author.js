@@ -7,8 +7,12 @@
  * @version 1.0
  *
  */
+
+// Dependencies
 import React from 'react'
-import Link from "next/link";
+import Link from "next/link"
+
+// Styles
 import styles from './Author.module.scss'
 
 const Author = () => (

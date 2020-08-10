@@ -8,8 +8,12 @@
  * @version 1.0
  *
  */
-import React from 'react';
-import PropTypes from 'prop-types';
+
+// Dependencies
+import React from 'react'
+import PropTypes from 'prop-types'
+
+// Styles
 import styles from './Info.module.scss'
 
 const Info = ({ client, agency, role, date }) => (

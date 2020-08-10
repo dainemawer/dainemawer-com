@@ -9,9 +9,13 @@
  * @version 1.0
  *
  */
+
+// Dependencies
 import React from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
+
+// Styles
 import styles from './Footer.module.scss'
 
 const Footer = () => (
