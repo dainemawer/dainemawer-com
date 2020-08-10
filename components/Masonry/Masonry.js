@@ -9,9 +9,13 @@
  * @version 1.0
  *
  */
-import React from 'react';
-import PropTypes from 'prop-types';
+
+// Dependencies
+import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
+
+// Styles
 import styles from './Masonry.module.scss'
 
 const Masonry = ({ items }) => (

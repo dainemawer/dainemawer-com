@@ -7,12 +7,17 @@
  * @version 1.0
  *
  */
+
+// Dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router'
-import Contentful from "@lib/contentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
+// Internal
+import Contentful from "@lib/contentful";
+
+// Components
 import Info from '@components/Info/Info'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
@@ -31,12 +36,6 @@ const options = {
     }
 }
 
-/**
- * Project Page
- *
- * @returns {null}
- * @constructor
- */
 const Project = ({ project }) => {
     const router = useRouter()
     const { slug } = router.query

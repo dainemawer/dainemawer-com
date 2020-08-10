@@ -7,7 +7,11 @@
  * @version 1.0
  *
  */
-import React from 'react';
+
+// Dependencies
+import React from 'react'
+
+// Components
 import Banner from '@components/Banner/Banner'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'

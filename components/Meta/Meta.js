@@ -9,15 +9,11 @@
  * @version 1.0
  *
  */
-import React from 'react';
+
+// Dependencies
+import React from 'react'
 import Head from 'next/head'
 
-/**
- * Masonry Component
- *
- * @returns {null}
- * @constructor
- */
 const Meta = ({ title, description, url }) => (
     <Head>
             <title>{title}</title>

@@ -7,8 +7,11 @@
  * @version 1.0
  *
  */
-import React from 'react';
 
+// Dependencies
+import React from 'react'
+
+// Components
 import Content from '@components/About/Content'
 import Certifications from '@components/About/Certifications'
 import Banner from '@components/Banner/Banner'

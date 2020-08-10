@@ -7,17 +7,23 @@
  * @version 1.0
  *
  */
-import React from 'react';
-import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic'
-import Contentful from "@lib/contentful";
 
+// Dependencies
+import React from 'react'
+import PropTypes from 'prop-types'
+import dynamic from 'next/dynamic'
+
+// Internal
+import Contentful from "@lib/contentful"
+
+// Components
 import Banner from '@components/Banner/Banner'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
 import Loading from '@components/Layout/Layout'
 import Meta from '@components/Meta/Meta'
 
+// Dynamic Components
 const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: () => <Loading /> });
 
 const Projects = ({ projects }) => (
@@ -44,11 +50,39 @@ export async function getServerSideProps() {
 }
 
 Projects.propTypes = {
-    projects: PropTypes.arrayOf(PropTypes.shape({}))
-}
-
-Projects.defaultProps = {
-    projects: []
+    projects: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string,
+            hidden: PropTypes.bool,
+            excerpt: PropTypes.string,
+            hero: PropTypes.shape({
+                description: PropTypes.string,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                height: PropTypes.number,
+                width: PropTypes.number,
+            }),
+            featured: PropTypes.shape({
+                description: PropTypes.string,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                height: PropTypes.number,
+                width: PropTypes.number,
+            }),
+            content: PropTypes.shape({
+                data: PropTypes.object,
+                content: PropTypes.array,
+                nodeType: PropTypes.string,
+            }),
+            client: PropTypes.string,
+            agency: PropTypes.string,
+            date: PropTypes.string,
+            role: PropTypes.string,
+            id: PropTypes.number,
+            slug: PropTypes.string,
+            type: PropTypes.string,
+        })
+    ).isRequired
 }
 
 export default Projects;

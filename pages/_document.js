@@ -1,6 +1,19 @@
+/**
+ * 🙋‍♂️ Document
+ *
+ * Override default NextJS _document
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+// Dependencies
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { TypographyStyle } from 'react-typography'
+
+// Internal
 import typography from '@lib/typography'
 
 class MyDocument extends Document {

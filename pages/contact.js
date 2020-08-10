@@ -7,11 +7,17 @@
  * @version 1.0
  *
  */
-import React, { useRef, useState } from 'react';
+
+// Dependencies
+import React, { useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import clsx from 'clsx'
 import {useForm} from "react-hook-form"
 
+// Internal
+import social from '@data/social'
+
+// Components
 import Banner from '@components/Banner/Banner'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
@@ -19,6 +25,7 @@ import Meta from '@components/Meta/Meta'
 import Details from '@components/Details/Details'
 import Form from '@components/Form/Form'
 
+// Styles
 import styles from '@components/Form/Form.module.scss'
 
 const Contact = () => {
@@ -73,7 +80,7 @@ const Contact = () => {
                 <Hero title="Contact me." subtitle="Lets create something rad. Tell me about your idea!" />
                 <article className={clsx(styles.article, 'page-content')} itemScope itemType="https://schema.org/BlogPosting">
                     <aside>
-                        <Details />
+                        <Details social={social} />
                     </aside>
                     <div>
                         <Form submit={handleSubmit(onSubmit)}>

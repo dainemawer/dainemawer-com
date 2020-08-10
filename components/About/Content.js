@@ -7,7 +7,11 @@
  * @version 1.0
  *
  */
-import React from 'react';
+
+// Dependencies
+import React from 'react'
+
+// Styles
 import styles from './About.module.scss'
 
 const Content = () => (
