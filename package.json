@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build && npm run sitemap",
+    "start": "next start",
+    "sitemap": "node ./lib/build.js"
   },
   "repository": {
     "type": "git",
