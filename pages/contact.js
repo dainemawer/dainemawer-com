@@ -78,11 +78,11 @@ const Contact = () => {
             />
             <Layout>
                 <Hero title="Contact me." subtitle="Lets create something rad. Tell me about your idea!" />
-                <article className={clsx(styles.article, 'page-content')} itemScope itemType="https://schema.org/BlogPosting">
-                    <aside>
-                        <Details social={social} />
-                    </aside>
+                <div className={clsx(styles.article, 'page-content')} itemScope itemType="https://schema.org/BlogPosting">
                     <div>
+                        <Details social={social} />
+                    </div>
+                    <article>
                         <Form submit={handleSubmit(onSubmit)}>
                             <div className={clsx(styles.group, styles['form-group'], errors.name ? styles['form-error'] : '')}>
                                 <label htmlFor="name">
@@ -156,8 +156,8 @@ const Contact = () => {
                                     <p className={styles.message}>{`✅ ${status.info.msg}. You will receive a reply shortly.`}</p>)}
                             </div>
                         </Form>
-                    </div>
-                </article>
+                    </article>
+                </div>
                 <Banner
                     background="rgba(83,175,79, 0.28)"
                     content="Why not take a look through my journal?

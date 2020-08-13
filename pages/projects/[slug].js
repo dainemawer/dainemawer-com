@@ -22,7 +22,8 @@ import Info from '@components/Info/Info'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
 import Meta from '@components/Meta/Meta'
-import styles from "@components/Masonry/Masonry.module.scss";
+import ArticleFooter from '@components/Article/ArticleFooter'
+import styles from "@components/Masonry/Masonry.module.scss"
 
 const options = {
     renderNode: {
@@ -50,7 +51,6 @@ const Project = ({ project }) => {
             <Layout>
                 <article itemScope itemType="https://schema.org/BlogPosting" className="page-project">
                     <Hero title={project.title} subtitle={project.excerpt} />
-                    <Info client={project.client} agency={project.agency} role={project.role} date={project.date} />
                     <div itemProp="mainEntityOfPage">
                         <header>
                             <picture>
@@ -62,19 +62,13 @@ const Project = ({ project }) => {
                             <meta itemProp="width" content={project.hero.width} />
                             <meta itemProp="height" content={project.hero.height} />
                         </header>
-                        <div itemProp="articleBody">
-                            {documentToReactComponents(project.content, options)}
-                        </div>
-                        <footer>
-                            <p className="screen-reader-text">
-                                        <span itemProp="datePublished">
-                                            <time dateTime={project.published}>{project.published}</time>
-                                        </span>
-                                <span itemProp="dateModified">
-                                            <time dateTime={project.modified}>{project.modified}</time>
-                                        </span>
-                            </p>
-                        </footer>
+                        <section className="project-content">
+                            <Info client={project.client} agency={project.agency} role={project.role} date={project.date} />
+                            <div itemProp="articleBody">
+                                {documentToReactComponents(project.content, options)}
+                            </div>
+                        </section>
+                        <ArticleFooter published={project.published} modified={project.modified} />
                     </div>
                 </article>
             </Layout>

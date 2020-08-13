@@ -1,0 +1,31 @@
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 2rem 0;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin: 0 1rem 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.link {
+  transition: opacity 250ms ease-in;
+
+  &:hover,
+  &:focus {
+    opacity: 0.55;
+    outline: 0;
+  }
+}
