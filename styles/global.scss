@@ -23,6 +23,17 @@ body.locked {
 	line-height: 1.5;
 }
 
+.page-content a {
+  border-bottom: 1px solid transparent;
+  font-weight: bold;
+  transition: border-bottom-color 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+	border-bottom-color: #313131;
+  }
+}
+
 .page-project p {
 	font-size: $fs-lead;
 	line-height: 1.5;

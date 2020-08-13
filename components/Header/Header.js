@@ -106,6 +106,11 @@ const Header = () => {
                                 <a className={clsx(styles['navigation-link'], router.pathname === `/contact` && styles['is-active'] )}>Contact</a>
                             </Link>
                         </li>
+                        <li className={styles['navigation-item']}>
+                            <Link href="/Uses" passHref>
+                                <a className={clsx(styles['navigation-link'], router.pathname === `/uses` && styles['is-active'] )}>Uses</a>
+                            </Link>
+                        </li>
                     </ul>
                 </FocusLock>
                 <button className={styles['menu-button']} ref={button} onClick={toggleDrawer} aria-expanded={open} aria-haspopup="true" aria-controls={`#${menu}`}>
