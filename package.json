@@ -28,6 +28,7 @@
     "next": "^9.5.2-canary.4",
     "next-auth": "^3.1.0",
     "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

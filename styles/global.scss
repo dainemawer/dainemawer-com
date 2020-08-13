@@ -28,6 +28,13 @@ body.locked {
 	line-height: 1.5;
 }
 
+.page-article p {
+  font-size: $fs-lead;
+  line-height: 1.5;
+  margin: 0 auto 1rem auto;
+  max-width: 660px;
+}
+
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -74,4 +81,14 @@ body.locked {
   img {
 	margin-bottom: 2rem;
   }
+}
+
+#nprogress .bar {
+  background: #313131 !important;
+  height: 3px;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #313131;
+  border-left-color: #313131;
 }
