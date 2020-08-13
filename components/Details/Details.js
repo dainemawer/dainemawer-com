@@ -29,7 +29,7 @@ const Item = ({ permalink, label, icon }) => (
 
 const Details = ({ social }) => (
     <>
-        <h4 className={styles.heading}>hello@dainemawer.com</h4>
+        <h3 className={styles.heading}>hello@dainemawer.com</h3>
         <ul className={styles.list}>
             {social && social.map( social => <Item key={social.id} permalink={social.permalink} label={social.label} icon={social.icon} />)}
         </ul>

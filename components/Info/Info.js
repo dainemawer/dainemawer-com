@@ -18,6 +18,7 @@ import styles from './Info.module.scss'
 
 const Info = ({ client, agency, role, date }) => (
     <div>
+        <h3 className={styles.heading}>Project Details</h3>
         <ul className={styles.list}>
             <li className={styles['list-item']}>
                 <strong className={styles.strong}>Client: </strong>

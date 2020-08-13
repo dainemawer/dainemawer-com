@@ -23,11 +23,7 @@
 
 	@supports (display: grid) {
 		display: grid;
-		grid-template-columns: 1fr;
-
-		@media (min-width: $bp-medium) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+	  	grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -35,11 +31,7 @@
 	background-color: $c-mercury;
 	height: 1px;
 	margin: 0 auto;
-	max-width: 95%;
-
-	@media (min-width: $bp-medium) {
-		max-width: 100%;
-	}
+  	max-width: 100%;
 }
 
 .email {
@@ -59,21 +51,25 @@
 .navigation {
 	align-items: center;
 	display: flex;
-	justify-content: center;
-	margin-bottom: $s-small;
+  	justify-content: flex-start;
+  	margin-bottom: 0;
+}
 
-	@media (min-width: $bp-medium) {
-		justify-content: flex-start;
-		margin-bottom: 0;
-	}
+.colophon {
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 0.5rem;
+
+  .navigation {
+	margin-bottom: 0;
+  }
+
+  .navigation:not(.language-select) {
+	justify-content: flex-end;
+  }
 }
 
 .language-select {
-	justify-content: center;
-
-	@media (min-width: $bp-medium) {
-		justify-content: flex-end;
-	}
+  justify-content: flex-start;
 }
 
 .navigation-item {
@@ -142,12 +138,8 @@
 	align-items: center;
 	display: flex;
 	font-size: $fs-small;
-	justify-content: center;
+	justify-content: flex-end;
 	margin: 0;
-
-	@media (min-width: $bp-medium) {
-		justify-content: flex-end;
-	}
 }
 
 .menu {

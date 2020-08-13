@@ -22,6 +22,8 @@ import Author from '@components/Author/Author'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
 import Meta from '@components/Meta/Meta'
+import ArticleHeader from '@components/Article/ArticleHeader'
+import ArticleFooter from '@components/Article/ArticleFooter'
 
 // Styles
 import styles from "@components/Masonry/Masonry.module.scss"
@@ -53,32 +55,11 @@ const Article = ({ article }) => {
                 <article itemScope itemType="https://schema.org/BlogPosting" className="page-project">
                     <Hero title={article.title} subtitle={article.excerpt} />
                     <div itemProp="mainEntityOfPage">
-                        <header>
-                            <div>
-                                <time dateTime={article.published}>{article.published}</time>
-                            </div>
-                            <picture>
-                                <source srcSet={`${article.hero.url}?fm=webp&q=60`} type='image/webp' />
-                                <source srcSet={`${article.hero.url}?q=60`} type='image/jpg' />
-                                <img className={styles.image} src={`${article.hero.url}?q=60`} loading="lazy" alt={article.hero.description} />
-                            </picture>
-                            <meta itemProp="url" content={article.hero.url} />
-                            <meta itemProp="width" content={article.hero.width} />
-                            <meta itemProp="height" content={article.hero.height} />
-                        </header>
+                        <ArticleHeader excerpt={article.excerpt} published={article.published} hero={article.hero} title={article.title} permalink={`https://dainemawer.com/${slug}`}  />
                         <div itemProp="articleBody">
                             {documentToReactComponents(article.content, options)}
                         </div>
-                        <footer>
-                            <p className="screen-reader-text">
-                                <span itemProp="datePublished">
-                                    <time dateTime={article.published}>{article.published}</time>
-                                </span>
-                                <span itemProp="dateModified">
-                                    <time dateTime={article.modified}>{article.modified}</time>
-                                </span>
-                            </p>
-                        </footer>
+                        <ArticleFooter published={article.published} modified={article.modified}/>
                         <Author />
                     </div>
                 </article>

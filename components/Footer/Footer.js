@@ -33,15 +33,22 @@ const Footer = () => (
                     <li className={styles['navigation-item']}>
                         <a className={styles['navigation-link']} href="https://linkedin.com/in/dainemawer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </li>
+                </ul>
+            </nav>
+            <p className={styles.location}>🌍 Cape Town, South Africa</p>
+        </div>
+        <hr className={styles.rule} />
+        <div className={clsx(styles.grid, styles.colophon)}>
+            <nav className={clsx(styles.navigation, styles['language-select'])}itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Language Selector">
+                <ul className={styles.menu}>
                     <li className={styles['navigation-item']}>
-                        <a className={styles['navigation-link']} href="https://linkedin.com/in/dainemawer/" target="_blank" rel="noopener noreferrer">Resume</a>
+                        <button type="button" className={clsx(styles['navigation-button'], styles['is-active'])}>English</button>
+                    </li>
+                    <li className={styles['navigation-item']}>
+                        <button type="button" className={styles['navigation-button']}>Afrikaans</button>
                     </li>
                 </ul>
             </nav>
-            <p className={styles.location}>🌍 <strong>&nbsp;Currently in:&nbsp;</strong> Cape Town, South Africa</p>
-        </div>
-        <hr className={styles.rule} />
-        <div className={styles.grid}>
             <nav className={styles.navigation} itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Footer Tertiary Navigation">
                 <ul className={styles.menu}>
                     <li className={styles['navigation-item']}>
@@ -58,16 +65,6 @@ const Footer = () => (
                         <Link href="/terms" passHref>
                             <a className={styles['navigation-link']}>Terms</a>
                         </Link>
-                    </li>
-                </ul>
-            </nav>
-            <nav className={clsx(styles.navigation, styles['language-select'])}itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Language Selector">
-                <ul className={styles.menu}>
-                    <li className={styles['navigation-item']}>
-                        <button type="button" className={clsx(styles['navigation-button'], styles['is-active'])}>English</button>
-                    </li>
-                    <li className={styles['navigation-item']}>
-                        <button type="button" className={styles['navigation-button']}>Afrikaans</button>
                     </li>
                 </ul>
             </nav>
