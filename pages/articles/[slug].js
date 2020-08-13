@@ -52,7 +52,7 @@ const Article = ({ article }) => {
                 url={`https://dainemawer.com/${slug}`}
             />
             <Layout>
-                <article itemScope itemType="https://schema.org/BlogPosting" className="page-project">
+                <article itemScope itemType="https://schema.org/BlogPosting" className="page-article">
                     <Hero title={article.title} subtitle={article.excerpt} />
                     <div itemProp="mainEntityOfPage">
                         <ArticleHeader excerpt={article.excerpt} published={article.published} hero={article.hero} title={article.title} permalink={`https://dainemawer.com/${slug}`}  />
