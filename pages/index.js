@@ -12,10 +12,11 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
+import { useSession, getSession } from 'next-auth/client'
 
 // Internal
 import Contentful from "@lib/contentful"
-import {filterItems} from '@lib/filter'
+import {filterItems} from '@lib/private'
 
 // Components
 import Banner from '@components/Banner/Banner'
@@ -29,10 +30,10 @@ import Splash from '@components/Splash/Splash'
 const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: () => <Loading /> });
 
 const Home = ({ articles, projects }) => {
-    const [loading, setLoading] = useState(true);
-    const filteredProjects = filterItems(projects);
-    const filteredArticles = filterItems(articles);
-    const items = [...filteredArticles, ...filteredProjects];
+    const [isLoading, setLoading] = useState(true);
+    const [ session, loading ] = useSession()
+    const filteredProjects = filterItems(projects, session, true);
+    const items = [...articles, ...filteredProjects];
 
     useEffect(() => {
         setTimeout( () => {
@@ -47,7 +48,7 @@ const Home = ({ articles, projects }) => {
                 description="I build accessible front-ends for the industries biggest brands."
                 url="https://dainemawer.com"
             />
-            {loading ? (
+            {isLoading ? (
                 <Splash />
             ) : (
                 <Layout>
@@ -127,14 +128,15 @@ Home.propTypes = {
     ),
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
     const BlogAPI = new Contentful('articles');
     const ProjectAPI = new Contentful('projects');
 
     const articles = await BlogAPI.fetchEntries();
     const projects = await ProjectAPI.fetchEntries();
+    const session = await getSession(context)
 
-    return {props: { articles, projects } };
+    return {props: { session, articles, projects } };
 };
 
 export default Home
