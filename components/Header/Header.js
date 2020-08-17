@@ -91,12 +91,12 @@ const Header = () => {
                         </li>
                         <li className={styles['navigation-item']}>
                             <Link href="/articles" passHref>
-                                <a className={clsx(styles['navigation-link'], router.pathname === `/articles` && styles['is-active'] )}>Articles</a>
+                                <a className={clsx(styles['navigation-link'], router.pathname === `/articles` || router.pathname === `/articles/[slug]` && styles['is-active'] )}>Articles</a>
                             </Link>
                         </li>
                         <li className={styles['navigation-item']}>
                             <Link href="/projects" passHref>
-                                <a className={clsx(styles['navigation-link'], router.pathname === `/projects` && styles['is-active'] )}>Projects</a>
+                                <a className={clsx(styles['navigation-link'], router.pathname === `/projects` || router.pathname === `/projects/[slug]`  && styles['is-active'] )}>Projects</a>
                             </Link>
                         </li>
                         <li className={styles['navigation-item']}>
