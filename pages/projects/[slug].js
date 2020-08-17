@@ -13,11 +13,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { useSession, getSession } from 'next-auth/client'
 
 // Internal
 import Contentful from "@lib/contentful";
 
 // Components
+import Access from '@components/Access/Access'
 import Info from '@components/Info/Info'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
@@ -39,6 +41,7 @@ const options = {
 
 const Project = ({ project }) => {
     const router = useRouter()
+    const [ session, loading ] = useSession()
     const { slug } = router.query
 
     return (
@@ -50,26 +53,32 @@ const Project = ({ project }) => {
             />
             <Layout>
                 <article itemScope itemType="https://schema.org/BlogPosting" className="page-project">
-                    <Hero title={project.title} subtitle={project.excerpt} />
-                    <div itemProp="mainEntityOfPage">
-                        <header>
-                            <picture>
-                                <source srcSet={`${project.hero.url}?fm=webp&q=60`} type='image/webp' />
-                                <source srcSet={`${project.hero.url}?q=60`} type='image/jpg' />
-                                <img className={styles.image} src={`${project.hero.url}?q=60`} loading="lazy" alt={project.hero.description} />
-                            </picture>
-                            <meta itemProp="url" content={project.hero.url} />
-                            <meta itemProp="width" content={project.hero.width} />
-                            <meta itemProp="height" content={project.hero.height} />
-                        </header>
-                        <section className="project-content">
-                            <Info client={project.client} agency={project.agency} role={project.role} date={project.date} />
-                            <div itemProp="articleBody">
-                                {documentToReactComponents(project.content, options)}
+                    {!session && project.hidden ? (
+                        <Access />
+                    ) : (
+                        <>
+                            <Hero title={project.title} subtitle={project.excerpt} />
+                            <div itemProp="mainEntityOfPage">
+                                <header>
+                                    <picture>
+                                        <source srcSet={`${project.hero.url}?fm=webp&q=60`} type='image/webp' />
+                                        <source srcSet={`${project.hero.url}?q=60`} type='image/jpg' />
+                                        <img className={styles.image} src={`${project.hero.url}?q=60`} loading="lazy" alt={project.hero.description} />
+                                    </picture>
+                                    <meta itemProp="url" content={project.hero.url} />
+                                    <meta itemProp="width" content={project.hero.width} />
+                                    <meta itemProp="height" content={project.hero.height} />
+                                </header>
+                                <section className="project-content">
+                                    <Info client={project.client} agency={project.agency} role={project.role} date={project.date} />
+                                    <div itemProp="articleBody">
+                                        {documentToReactComponents(project.content, options)}
+                                    </div>
+                                </section>
+                                <ArticleFooter published={project.published} modified={project.modified} />
                             </div>
-                        </section>
-                        <ArticleFooter published={project.published} modified={project.modified} />
-                    </div>
+                        </>
+                    )}
                 </article>
             </Layout>
         </>
@@ -79,8 +88,10 @@ const Project = ({ project }) => {
 export async function getServerSideProps(context) {
     const api = new Contentful('projects');
     const project = await api.getEntryBySlug(context.query.slug);
+    const session = await getSession(context)
+
     return {
-        props: { project }
+        props: { session, project }
     }
 }
 
