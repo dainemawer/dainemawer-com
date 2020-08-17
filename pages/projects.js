@@ -12,6 +12,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
+import { useSession, getSession } from 'next-auth/client'
 
 // Internal
 import Contentful from "@lib/contentful"
@@ -26,26 +27,36 @@ import Meta from '@components/Meta/Meta'
 // Dynamic Components
 const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: () => <Loading /> });
 
-const Projects = ({ projects }) => (
-    <>
-        <Meta
-            title="Projects | Daine Mawer"
-            description="A collection of some of the work I’m most proud of."
-            url="https://dainemawer.com/projects"
-        />
-        <Layout>
-            <Hero title="Projects." subtitle="A collection of some of the work I’m most proud of." />
-            {projects && <Masonry items={projects} />}
-            <Banner background="rgba(185,141,79, 0.28)" />
-        </Layout>
-    </>
-);
+const Projects = ({ projects }) => {
+    const [ session, loading ] = useSession()
+    return (
+        <>
+            <Meta
+                title="Projects | Daine Mawer"
+                description="A collection of some of the work I’m most proud of."
+                url="https://dainemawer.com/projects"
+            />
+            <Layout>
+                <Hero title="Projects." subtitle="A collection of some of the work I’m most proud of." />
+                {session ? (
+                    <>
+                        {projects && <Masonry items={projects} />}
+                        <Banner background="rgba(185,141,79, 0.28)" />
+                    </>
+                ) : (
+                      <p>Sorry, you cant access that page.</p>
+                )}
+            </Layout>
+        </>
+    )
+};
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+    const session = await getSession(context)
     const ProjectsAPI = new Contentful('projects');
     const projects = await ProjectsAPI.fetchEntries();
     return {
-        props: { projects }
+        props: { session, projects }
     }
 }
 

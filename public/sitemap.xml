@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
   <loc>http://localhost:3000/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://localhost:3000/articles/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>http://localhost:3000/projects/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>http://localhost:3000/about/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>http://localhost:3000/contact/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>http://localhost:3000/privacy/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>http://localhost:3000/terms/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>http://localhost:3000/cookies/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>http://localhost:3000/articles/build-an-accessible-accordion-in-react/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://localhost:3000/articles/100-nextjs-tips/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://localhost:3000/articles/react-portals/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://localhost:3000/projects/wildsprout/</loc>
-  <lastmod>2020-08-10T04:08:57+0:00</lastmod>
+  <lastmod>2020-08-17T04:09:36+0:00</lastmod>
   <priority>0.80</priority>
 </url>
 </urlset>
