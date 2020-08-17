@@ -17,7 +17,11 @@ import { useSession, getSession } from 'next-auth/client'
 // Internal
 import Contentful from "@lib/contentful"
 
+// Lib
+import { filterItems } from "@lib/private"
+
 // Components
+import Access from '@components/Access/Access'
 import Banner from '@components/Banner/Banner'
 import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
@@ -29,6 +33,8 @@ const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: 
 
 const Projects = ({ projects }) => {
     const [ session, loading ] = useSession()
+    const getPrivateItems = filterItems(projects, session, true);
+
     return (
         <>
             <Meta
@@ -38,14 +44,9 @@ const Projects = ({ projects }) => {
             />
             <Layout>
                 <Hero title="Projects." subtitle="A collection of some of the work I’m most proud of." />
-                {session ? (
-                    <>
-                        {projects && <Masonry items={projects} />}
-                        <Banner background="rgba(185,141,79, 0.28)" />
-                    </>
-                ) : (
-                      <p>Sorry, you cant access that page.</p>
-                )}
+                {projects && <Masonry items={getPrivateItems} />}
+                {!session && <Access />}
+                <Banner background="rgba(185,141,79, 0.28)" />
             </Layout>
         </>
     )
