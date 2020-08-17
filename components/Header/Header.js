@@ -15,12 +15,14 @@ import {useRouter} from 'next/router'
 import FocusLock from 'react-focus-lock'
 import clsx from 'clsx'
 import Link from 'next/link'
+import {signout, useSession} from 'next-auth/client'
 
 // Styles
 import styles from './Header.module.scss'
 
 const Header = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false)
+    const [ session, loading ] = useSession()
     const node = useRef(null)
     const button = useRef(null)
     const menu = 'primaryNavigation';
@@ -76,6 +78,7 @@ const Header = () => {
                         </g>
                     </svg>
                 </a>
+                {session && <p className={styles.welcome}>✌️ Hey, friend. <strong><a className={styles.signout} href={`/api/auth/signout`} onClick={(e) => {e.preventDefault(); signout()}}>sign out</a></strong></p>}
             </div>
             <nav className={styles.navigation} itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Primary Site Navigation">
                 <FocusLock disabled={!open}>
@@ -104,11 +107,6 @@ const Header = () => {
                         <li className={styles['navigation-item']}>
                             <Link href="/contact" passHref>
                                 <a className={clsx(styles['navigation-link'], router.pathname === `/contact` && styles['is-active'] )}>Contact</a>
-                            </Link>
-                        </li>
-                        <li className={styles['navigation-item']}>
-                            <Link href="/Uses" passHref>
-                                <a className={clsx(styles['navigation-link'], router.pathname === `/uses` && styles['is-active'] )}>Uses</a>
                             </Link>
                         </li>
                     </ul>
