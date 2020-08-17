@@ -106,7 +106,7 @@
 	list-style-type: none;
 	left: 0;
 	margin: 0;
-	max-width: 350px;
+	max-width: 320px;
 	opacity: 0;
 	padding: $s-xlarge;
 	position: fixed;
@@ -168,4 +168,15 @@
 
 .icon {
 	pointer-events: none;
+}
+
+.signout {
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 250ms ease-in;
+
+  &:hover,
+  &:focus {
+	border-bottom-color: #313131;
+	outline: 0;
+  }
 }
