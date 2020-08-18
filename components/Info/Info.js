@@ -41,17 +41,17 @@ const Info = ({ client, agency, role, date }) => (
 );
 
 Info.propTypes = {
-    client: PropTypes.string,
     agency: PropTypes.string,
-    role: PropTypes.string,
-    date: PropTypes.string
+    client: PropTypes.string,
+    date: PropTypes.string,
+    role: PropTypes.string
 }
 
 Info.defaultProps = {
-    client: '',
     agency: '',
-    role: '',
-    date: ''
+    client: '',
+    date: '',
+    role: ''
 }
 
 export default Info;

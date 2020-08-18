@@ -22,8 +22,8 @@ import styles from './Access.module.scss'
 const Access = () => {
     return (
         <section className={styles.section}>
-            <h2>✋ Sorry, but you'll need a login to view all of my work.</h2>
-            <p className={styles.paragraph}>If I've already provided you with a <strong>username</strong> and <strong>password</strong>, sign in below:</p>
+            <h2>✋ Sorry, but you&apos;ll need a login to view all of my work.</h2>
+            <p className={styles.paragraph}>If I&apos;ve already provided you with a <strong>username</strong> and <strong>password</strong>, sign in below:</p>
             <Link href="/sign-in" passHref>
                 <a className={styles.button}>Sign In</a>
             </Link>

@@ -32,9 +32,9 @@ const Contact = () => {
     const recaptchaRef = useRef(null);
     const {register, errors, handleSubmit} = useForm();
     const [status, setStatus] = useState({
+        info: {error: false, msg: null},
         submitted: false,
         submitting: false,
-        info: {error: false, msg: null}
     });
 
     const onSubmit = async (data, event) => {
@@ -42,11 +42,11 @@ const Contact = () => {
         const formData = {...data, token};
 
         const res = await fetch('/api/send', {
-            method: 'POST',
+            body: JSON.stringify(formData),
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
+            method: 'POST',
         });
 
         const text = await res.text();
@@ -58,9 +58,9 @@ const Contact = () => {
             event.target.reset();
             recaptchaRef.current.reset();
             setStatus({
+                info: {error: false, msg},
                 submitted: true,
                 submitting: false,
-                info: {error: false, msg},
             });
         } else {
             setStatus({
@@ -89,11 +89,11 @@ const Contact = () => {
                                     <span className="screen-reader-text">Name</span>
                                     <input className={styles.input} id="name" type="text" placeholder="Name" name="name"
                                            ref={register({
-                                               required: 'This field is required',
                                                maxLength: {
-                                                   value: 20,
-                                                   message: 'This field cant be longer than 20 characters. '
-                                               }
+                                                   message: 'This field cant be longer than 20 characters. ',
+                                                   value: 20
+                                               },
+                                               required: 'This field is required'
                                            })}/>
                                 </label>
                                 {errors.name && (<p className={styles.error}>{errors.name.message}</p>)}
@@ -103,11 +103,11 @@ const Contact = () => {
                                     <span className="screen-reader-text">Name</span>
                                     <input className={styles.input} id="email" type="text" placeholder="Email Address" name="email"
                                            ref={register({
-                                               required: 'This field is required',
                                                maxLength: {
-                                                   value: 20,
-                                                   message: 'This field cant be longer than 20 characters. '
-                                               }
+                                                   message: 'This field cant be longer than 20 characters. ',
+                                                   value: 20
+                                               },
+                                               required: 'This field is required',
                                            })}/>
                                 </label>
                                 {errors.email && (<p className={styles.error}>{errors.email.message}</p>)}
@@ -117,11 +117,11 @@ const Contact = () => {
                                     <span className="screen-reader-text">Subject</span>
                                     <input className={styles.input} id="subject" type="text" placeholder="Subject" name="subject"
                                            ref={register({
-                                               required: 'This field is required',
                                                maxLength: {
-                                                   value: 20,
-                                                   message: 'This field cant be longer than 20 characters. '
-                                               }
+                                                   message: 'This field cant be longer than 20 characters. ',
+                                                   value: 20
+                                               },
+                                               required: 'This field is required',
                                            })}/>
                                 </label>
                                 {errors.subject && (<p className={styles.error}>{errors.subject.message}</p>)}
@@ -130,11 +130,11 @@ const Contact = () => {
                                 <label htmlFor="message">
                                     <span className="screen-reader-text">Message</span>
                                     <textarea className={styles.textarea} id="message" name="message" placeholder="Message" rows="15" ref={register({
-                                        required: true,
                                         minLength: {
+                                            message: 'This field is required and needs to be at least 100 characters long.',
                                             value: 100,
-                                            message: 'This field is required and needs to be at least 100 characters long.'
-                                        }
+                                        },
+                                        required: true,
                                     })}/>
                                 </label>
                                 {errors.message && (<p className={styles.error}>{errors.message.message}</p>)}

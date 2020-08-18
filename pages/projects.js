@@ -32,7 +32,7 @@ import Meta from '@components/Meta/Meta'
 const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: () => <Loading /> });
 
 const Projects = ({ projects }) => {
-    const [ session, loading ] = useSession()
+    const [ session, ] = useSession()
     const getPrivateItems = filterItems(projects, session, true);
 
     return (
@@ -57,41 +57,41 @@ export async function getServerSideProps(context) {
     const ProjectsAPI = new Contentful('projects');
     const projects = await ProjectsAPI.fetchEntries();
     return {
-        props: { session, projects }
+        props: { projects, session }
     }
 }
 
 Projects.propTypes = {
     projects: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.string,
-            hidden: PropTypes.bool,
-            excerpt: PropTypes.string,
-            hero: PropTypes.shape({
-                description: PropTypes.string,
-                title: PropTypes.string,
-                url: PropTypes.string,
-                height: PropTypes.number,
-                width: PropTypes.number,
-            }),
-            featured: PropTypes.shape({
-                description: PropTypes.string,
-                title: PropTypes.string,
-                url: PropTypes.string,
-                height: PropTypes.number,
-                width: PropTypes.number,
-            }),
+            agency: PropTypes.string,
+            client: PropTypes.string,
             content: PropTypes.shape({
-                data: PropTypes.object,
                 content: PropTypes.array,
+                data: PropTypes.object,
                 nodeType: PropTypes.string,
             }),
-            client: PropTypes.string,
-            agency: PropTypes.string,
             date: PropTypes.string,
-            role: PropTypes.string,
+            excerpt: PropTypes.string,
+            featured: PropTypes.shape({
+                description: PropTypes.string,
+                height: PropTypes.number,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                width: PropTypes.number,
+            }),
+            hero: PropTypes.shape({
+                description: PropTypes.string,
+                height: PropTypes.number,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                width: PropTypes.number,
+            }),
+            hidden: PropTypes.bool,
             id: PropTypes.number,
+            role: PropTypes.string,
             slug: PropTypes.string,
+            title: PropTypes.string,
             type: PropTypes.string,
         })
     ).isRequired

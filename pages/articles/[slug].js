@@ -78,16 +78,17 @@ export async function getServerSideProps(context) {
 
 Article.propTypes = {
     article: PropTypes.shape({
-        title: PropTypes.string,
+        content: PropTypes.shape({}),
         excerpt: PropTypes.string,
-        published: PropTypes.string,
-        modified: PropTypes.string,
         hero: PropTypes.shape({
             description: PropTypes.string,
+            height: PropTypes.number,
             url: PropTypes.string,
             width: PropTypes.number,
-            height: PropTypes.number,
-        })
+        }),
+        modified: PropTypes.string,
+        published: PropTypes.string,
+        title: PropTypes.string
     }).isRequired
 }
 

@@ -12,9 +12,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// Styles
-import styles from './Article.module.scss'
-
 const ArticleFooter = ({ published, modified }) => (
     <footer>
         <p className="screen-reader-text">

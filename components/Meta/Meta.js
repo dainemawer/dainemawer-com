@@ -12,6 +12,7 @@
 
 // Dependencies
 import React from 'react'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 const Meta = ({ title, description, url }) => (
@@ -39,5 +40,17 @@ const Meta = ({ title, description, url }) => (
             <meta name="twitter:image" content="/og-image.png" />
     </Head>
 );
+
+Meta.propTypes = {
+    description: PropTypes.string,
+    title: PropTypes.string,
+    url: PropTypes.string
+}
+
+Meta.defaultProps = {
+    description: '',
+    title: '',
+    url: ''
+}
 
 export default Meta;

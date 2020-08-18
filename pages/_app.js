@@ -9,6 +9,7 @@
  *
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import { Provider } from 'next-auth/client'
@@ -25,5 +26,12 @@ const App = ( { Component, pageProps } ) => (
         <Component {...pageProps} />
     </Provider>
 );
+
+App.propTypes = {
+    Component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+    pageProps: PropTypes.shape({
+        session: PropTypes.shape({})
+    })
+}
 
 export default App;

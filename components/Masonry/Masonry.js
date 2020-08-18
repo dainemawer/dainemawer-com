@@ -42,15 +42,15 @@ const Masonry = ({ items }) => (
 
 Masonry.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        type: PropTypes.string,
-        slug: PropTypes.string,
-        title: PropTypes.string,
         excerpt: PropTypes.string,
         featured: PropTypes.shape({
-            url: PropTypes.string,
             description: PropTypes.string,
+            url: PropTypes.string
         }),
+        id: PropTypes.number,
+        slug: PropTypes.string,
+        title: PropTypes.string,
+        type: PropTypes.string,
     })).isRequired,
 }
 

@@ -8,9 +8,6 @@
  *
  */
 
-// Dependencies
-import React from 'react'
-
 // Internal
 import Contentful from "@lib/contentful";
 
