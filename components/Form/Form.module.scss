@@ -9,93 +9,92 @@
 @import "../../styles/variables";
 
 .form {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .button {
-	background: transparent;
-	border: 0;
-	border-bottom: 1px solid $c-mine-shaft;
-	cursor: pointer;
-	font-size: $fs-lead;
-	padding: 0 0 5px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid $c-mine-shaft;
+  cursor: pointer;
+  font-size: $fs-lead;
+  padding: 0 0 5px 0;
 }
 
 .fieldset {
-	border: 0;
-  	padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 .input {
-	border: 1px solid $c-silver;
-	padding: 1rem;
-	transition: border-color 250ms ease-in;
-	width: 100%;
+  border: 1px solid $c-silver;
+  padding: 1rem;
+  transition: border-color 250ms ease-in;
+  width: 100%;
 
-	&:focus {
-		border-color: $c-mine-shaft;
-		outline: 0;
-	}
+  &:focus {
+    border-color: $c-mine-shaft;
+    outline: 0;
+  }
 }
 
 .textarea {
-	border: 1px solid $c-silver;
-	padding: $s-normal 10rem $s-normal $s-normal;
-	resize: none;
-	transition: border-color 250ms ease-in;
-	width: 100%;
+  border: 1px solid $c-silver;
+  padding: $s-normal 10rem $s-normal $s-normal;
+  resize: none;
+  transition: border-color 250ms ease-in;
+  width: 100%;
 
-	&:focus {
-		border-color: $c-mine-shaft;
-		outline: 0;
-	}
+  &:focus {
+    border-color: $c-mine-shaft;
+    outline: 0;
+  }
 }
 
 .error {
-	background-color: $c-white;
-	font-size: $fs-small !important;
-	position: absolute;
-	top: 50%;
-	right: 1rem;
-	transform: translateY(-50%);
-	margin: 0;
+  background-color: $c-white;
+  font-size: $fs-small !important;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  margin: 0;
 }
 
 .message {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .group {
-	margin-bottom: $s-xlarge;
-	position: relative;
+  margin-bottom: $s-xlarge;
+  position: relative;
 
-  	&:last-child {
-	  margin-bottom: 0;
-	}
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-	&.form-error {
-		.error {
-			color: $c-matrix;
-		}
-	}
+  &.form-error {
+    .error {
+      color: $c-matrix;
+    }
+  }
 
-	&.form-group-textarea.form-error {
-
-		.error {
-			max-width: 150px;
-			top: $s-xxlarge;
-		}
-	}
+  &.form-group-textarea.form-error {
+    .error {
+      max-width: 150px;
+      top: $s-xxlarge;
+    }
+  }
 }
 
 .article {
-	display: grid;
-	grid-gap: 1rem;
-	grid-template-columns: 1fr;
-	padding: $s-normal 0;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  padding: $s-normal 0;
 
-	@media (min-width: $bp-medium) {
-	  	grid-gap: $s-xlarge;
-		grid-template-columns: 4fr 8fr;
-	}
+  @media (min-width: $bp-medium) {
+    grid-gap: $s-xlarge;
+    grid-template-columns: 4fr 8fr;
+  }
 }

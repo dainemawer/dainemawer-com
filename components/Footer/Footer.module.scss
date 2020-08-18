@@ -9,50 +9,50 @@
 @import "../../styles/variables";
 
 .container {
-	margin: 0 auto;
-	max-width: 960px;
-	padding: $s-xlarge $s-large $s-large $s-large;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: $s-xlarge $s-large $s-large $s-large;
 
-  	@media (min-width: $bp-medium) {
-	  padding: $s-xlarge $s-normal;
-	}
+  @media (min-width: $bp-medium) {
+    padding: $s-xlarge $s-normal;
+  }
 }
 
 .grid {
-	padding: $s-normal 0;
+  padding: $s-normal 0;
 
-	@supports (display: grid) {
-		display: grid;
-	  	grid-template-columns: repeat(2, 1fr);
-	}
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .rule {
-	background-color: $c-mercury;
-	height: 1px;
-	margin: 0 auto;
-  	max-width: 100%;
+  background-color: $c-mercury;
+  height: 1px;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 .email {
-	display: flex;
-	font-family: $ff-family-primary;
-	font-size: $fs-large;
-	font-weight: $fw-bold;
-	justify-content: center;
-	margin: 0;
+  display: flex;
+  font-family: $ff-family-primary;
+  font-size: $fs-large;
+  font-weight: $fw-bold;
+  justify-content: center;
+  margin: 0;
 
-	@media (min-width: $bp-medium) {
-	  	font-size: $fs-xlarge;
-		justify-content: flex-start;
-	}
+  @media (min-width: $bp-medium) {
+    font-size: $fs-xlarge;
+    justify-content: flex-start;
+  }
 }
 
 .navigation {
-	align-items: center;
-	display: flex;
-  	justify-content: flex-start;
-  	margin-bottom: 0;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
 
 .colophon {
@@ -60,11 +60,11 @@
   padding-bottom: 0.5rem;
 
   .navigation {
-	margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   .navigation:not(.language-select) {
-	justify-content: flex-end;
+    justify-content: flex-end;
   }
 }
 
@@ -73,79 +73,79 @@
 }
 
 .navigation-item {
-	margin-bottom: 0;
-	position: relative;
+  margin-bottom: 0;
+  position: relative;
 
-	&::after {
-		content: " / ";
-		display: inline-block;
-		text-align: center;
-		width: 1.5rem;
-	}
+  &::after {
+    content: " / ";
+    display: inline-block;
+    text-align: center;
+    width: 1.5rem;
+  }
 
-	&:last-child {
-		margin-right: 0;
+  &:last-child {
+    margin-right: 0;
 
-		&::after {
-		  content: "";
-		  display: none;
-		}
-	}
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
 }
 
 .navigation-link {
-	border-bottom: 1px solid transparent;
-	color: $c-mine-shaft;
-	font-family: 'Work Sans', sans-serif;
-	font-size: $fs-small;
-	font-weight: $fw-normal;
-	padding-bottom: 5px;
-	transition: border-bottom-color 250ms ease-in;
+  border-bottom: 1px solid transparent;
+  color: $c-mine-shaft;
+  font-family: 'Work Sans', sans-serif;
+  font-size: $fs-small;
+  font-weight: $fw-normal;
+  padding-bottom: 5px;
+  transition: border-bottom-color 250ms ease-in;
 
-	&:hover,
-	&:focus,
-	&.is-active {
-		border-bottom-color: $c-mine-shaft;
-	  	outline: 0;
-	}
+  &:hover,
+  &:focus,
+  &.is-active {
+    border-bottom-color: $c-mine-shaft;
+    outline: 0;
+  }
 }
 
 .navigation-button {
-	background-color: transparent;
-	border: 0;
-  	border-bottom: 1px solid transparent;
-	color: $c-nobel;
-	cursor: pointer;
-	font-size: $fs-small;
-	font-weight: $fw-normal;
-	padding: 0;
-	transition: color 250ms ease-in-out;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: $c-nobel;
+  cursor: pointer;
+  font-size: $fs-small;
+  font-weight: $fw-normal;
+  padding: 0;
+  transition: color 250ms ease-in-out;
 
-	&:hover,
-	&:focus {
-	  border-bottom-color: $c-mine-shaft;
-	  color: $c-mine-shaft;
-	  outline: 0;
-	}
+  &:hover,
+  &:focus {
+    border-bottom-color: $c-mine-shaft;
+    color: $c-mine-shaft;
+    outline: 0;
+  }
 }
 
 .is-active {
-  	border-bottom-color: $c-mine-shaft;
-	color: $c-mine-shaft;
+  border-bottom-color: $c-mine-shaft;
+  color: $c-mine-shaft;
 }
 
 .location {
-	align-items: center;
-	display: flex;
-	font-size: $fs-small;
-	justify-content: flex-end;
-	margin: 0;
+  align-items: center;
+  display: flex;
+  font-size: $fs-small;
+  justify-content: flex-end;
+  margin: 0;
 }
 
 .menu {
-	align-items: center;
-	display: flex;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  align-items: center;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

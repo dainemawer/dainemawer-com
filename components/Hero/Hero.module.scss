@@ -9,22 +9,22 @@
 @import "../../styles/variables";
 
 .title {
-	font-size: $fs-xxlarge;
-	font-weight: $fw-book;
-	margin: 0 0 0.25rem 0;
+  font-size: $fs-xxlarge;
+  font-weight: $fw-book;
+  margin: 0 0 0.25rem 0;
 }
 
 .sub-title {
-	font-size: $fs-xxlarge;
-	line-height: 1.25;
-	max-width: 530px;
-	margin: 0;
+  font-size: $fs-xxlarge;
+  line-height: 1.25;
+  max-width: 530px;
+  margin: 0;
 }
 
 .section {
-	padding: $s-normal 0 $s-xlarge 0;
+  padding: $s-normal 0 $s-xlarge 0;
 
-  	@media (min-width: $bp-medium) {
-		padding: $s-xlarge 0;
-	}
+  @media (min-width: $bp-medium) {
+    padding: $s-xlarge 0;
+  }
 }

@@ -10,17 +10,17 @@
 @import "variables";
 
 * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.locked {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .page-content p {
-	font-size: $fs-lead;
-	line-height: 1.5;
+  font-size: $fs-lead;
+  line-height: 1.5;
 }
 
 .page-content a {
@@ -30,13 +30,13 @@ body.locked {
 
   &:hover,
   &:focus {
-	border-bottom-color: #313131;
+    border-bottom-color: #313131;
   }
 }
 
 .page-project p {
-	font-size: $fs-lead;
-	line-height: 1.5;
+  font-size: $fs-lead;
+  line-height: 1.5;
 }
 
 .page-article p {
@@ -47,35 +47,34 @@ body.locked {
 }
 
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 
-  	&:focus {
-	  background-color: #eee;
-	  clip: auto !important;
-	  clip-path: none;
-	  color: #444;
-	  display: block;
-	  font-size: 1em;
-	  height: auto;
-	  left: 5px;
-	  line-height: normal;
-	  outline: 0;
-	  padding: 15px 23px 14px;
-	  text-decoration: none;
-	  top: 5px;
-	  width: auto;
-	  z-index: 999;
-	}
-
+  &:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    outline: 0;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 999;
+  }
 }
 
 .project-content {
@@ -85,12 +84,12 @@ body.locked {
   margin-top: 2rem;
 
   @media (min-width: 768px) {
-	grid-gap: 2rem;
-	grid-template-columns: 2fr 5fr;
+    grid-gap: 2rem;
+    grid-template-columns: 2fr 5fr;
   }
 
   img {
-	margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 }
 

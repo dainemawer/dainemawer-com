@@ -1,5 +1,15 @@
+/**
+ * Access Styles
+ *
+ * @author Daine Mawer
+ * @version 1.0
+ *
+ */
+
+@import "../../styles/variables";
+
 .section {
-  border: 1px solid #E3E3E3;
+  border: 1px solid $c-mercury;
   border-radius: 8px;
   padding: 3rem;
   margin-top: 2rem;
@@ -12,8 +22,8 @@
 
 .button {
   background-image: none;
-  border-bottom: 1px solid #313131;
-  color: #313131;
+  border-bottom: 1px solid $c-mine-shaft;
+  color: $c-mine-shaft;
   font-size: 1.25rem;
-  padding-bottom: 5px
+  padding-bottom: 5px;
 }
