@@ -7,7 +7,9 @@
     "dev": "next",
     "build": "next build && npm run sitemap",
     "start": "next start",
-    "sitemap": "node ./lib/build.js"
+    "sitemap": "node ./lib/build.js",
+    "lint:js": "eslint .",
+    "lint:scss": "stylelint **/*.scss"
   },
   "repository": {
     "type": "git",
@@ -41,5 +43,14 @@
     "typeface-work-sans": "0.0.72",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.7.0",
+    "eslint-plugin-react": "^7.20.6",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
   }
 }
