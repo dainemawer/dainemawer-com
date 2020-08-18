@@ -9,50 +9,50 @@
 @import "../../styles/variables";
 
 .grid {
-	display: grid;
-	grid-gap: $s-xlarge;
-	grid-template-columns: 1fr;
+  display: grid;
+  grid-gap: $s-xlarge;
+  grid-template-columns: 1fr;
 
-	@media (min-width: $bp-medium) {
-		grid-template-columns: 1fr 1fr;
-	}
+  @media (min-width: $bp-medium) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .image {
-	border-radius: 8px;
-  	margin-bottom: 0;
+  border-radius: 8px;
+  margin-bottom: 0;
 
-  	@media (min-width: $bp-medium) {
-	  margin-bottom: $s-normal;
-	}
+  @media (min-width: $bp-medium) {
+    margin-bottom: $s-normal;
+  }
 }
 
 .section {
-	margin-top: $s-xlarge;
+  margin-top: $s-xlarge;
 }
 
 .title {
-	margin-bottom: $s-xlarge;
+  margin-bottom: $s-xlarge;
 }
 
 .list {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .certification-link {
-	background-image: none;
-	border-bottom: 1px solid $c-mine-shaft;
-	color: $c-mine-shaft;
-	font-weight: $fw-bold;
+  background-image: none;
+  border-bottom: 1px solid $c-mine-shaft;
+  color: $c-mine-shaft;
+  font-weight: $fw-bold;
 }
 
 .certification-item {
-	font-size: $fs-normal;
-	margin-bottom: $s-medium;
+  font-size: $fs-normal;
+  margin-bottom: $s-medium;
 
-  	@media(min-width: $bp-medium) {
-	  font-size: $fs-lead;
-	}
+  @media (min-width: $bp-medium) {
+    font-size: $fs-lead;
+  }
 }

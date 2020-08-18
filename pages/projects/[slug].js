@@ -41,7 +41,7 @@ const options = {
 
 const Project = ({ project }) => {
     const router = useRouter()
-    const [ session, loading ] = useSession()
+    const [ session, ] = useSession()
     const { slug } = router.query
 
     return (
@@ -91,22 +91,28 @@ export async function getServerSideProps(context) {
     const session = await getSession(context)
 
     return {
-        props: { session, project }
+        props: { project, session }
     }
 }
 
 Project.propTypes = {
     project: PropTypes.shape({
-        title: PropTypes.string,
+        agency: PropTypes.string,
+        client: PropTypes.string,
+        content: PropTypes.shape({}),
+        date: PropTypes.string,
         excerpt: PropTypes.string,
-        published: PropTypes.string,
-        modified: PropTypes.string,
         hero: PropTypes.shape({
             description: PropTypes.string,
+            height: PropTypes.number,
             url: PropTypes.string,
             width: PropTypes.number,
-            height: PropTypes.number,
-        })
+        }),
+        hidden: PropTypes.bool,
+        modified: PropTypes.string,
+        published: PropTypes.string,
+        role: PropTypes.string,
+        title: PropTypes.string,
     }).isRequired
 }
 

@@ -71,25 +71,29 @@ const ArticleHeader = ({ excerpt, published, hero, title, permalink }) => {
 };
 
 ArticleHeader.propTypes = {
+    excerpt: PropTypes.string,
     hero: PropTypes.shape({
         description: PropTypes.string,
         height: PropTypes.number,
         url: PropTypes.string,
         width: PropTypes.number
     }),
-    published: PropTypes.string,
     permalink: PropTypes.string,
+    published: PropTypes.string,
+    title: PropTypes.string
 }
 
 ArticleHeader.defaultProps = {
+    excerpt: '',
     hero: {
         description: '',
         height: 0,
         url: PropTypes.string,
         width: 0,
     },
-    published: '',
     permalink: '',
+    published: '',
+    title: '',
 }
 
 export default ArticleHeader;

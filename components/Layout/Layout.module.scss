@@ -9,15 +9,15 @@
 @import "../../styles/variables";
 
 .container {
-	margin: 0 auto;
-	max-width: 960px;
-  	padding: 0 $s-large 0 $s-large;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 $s-large 0 $s-large;
 
-	@media (min-width: $bp-medium) {
-		padding: 0 $s-xlarge;
-	}
+  @media (min-width: $bp-medium) {
+    padding: 0 $s-xlarge;
+  }
 
-  	@media(min-width: $bp-large) {
-		padding: 0 $s-normal;
-	}
+  @media (min-width: $bp-large) {
+    padding: 0 $s-normal;
+  }
 }

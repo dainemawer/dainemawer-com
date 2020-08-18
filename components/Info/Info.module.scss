@@ -9,33 +9,33 @@
 @import "../../styles/variables";
 
 .list {
-	display: flex;
-  	flex-direction: column;
-	list-style-type: none;
-	padding: 0;
-	margin: 0 0 $s-normal 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 $s-normal 0;
 }
 
 .list-item {
-	margin: 0 $s-normal 1rem 0;
+  margin: 0 $s-normal 1rem 0;
 
-	&:last-child {
-		margin: 0;
-	}
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .strong {
-	font-weight: $fw-bolder;
+  font-weight: $fw-bolder;
 }
 
 .image {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .heading {
   margin: 0 0 1rem 0;
 
   @media (min-width: 768px) {
-	margin: 0 0 2rem 0;
+    margin: 0 0 2rem 0;
   }
 }

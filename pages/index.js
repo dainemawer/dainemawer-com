@@ -31,7 +31,7 @@ const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: 
 
 const Home = ({ articles, projects }) => {
     const [isLoading, setLoading] = useState(true);
-    const [ session, loading ] = useSession()
+    const [ session, ] = useSession()
     const filteredProjects = filterItems(projects, session, true);
     const items = [...articles, ...filteredProjects];
 
@@ -65,64 +65,64 @@ const Home = ({ articles, projects }) => {
 Home.propTypes = {
     articles: PropTypes.arrayOf(
         PropTypes.shape({
-            published: PropTypes.string,
-            modified: PropTypes.string,
-            id: PropTypes.number,
-            title: PropTypes.string,
-            excerpt: PropTypes.string,
             content: PropTypes.shape({
-                data: PropTypes.object,
                 content: PropTypes.array,
+                data: PropTypes.object,
                 nodeType: PropTypes.string,
             }),
-            slug: PropTypes.string,
-            type: PropTypes.string,
-            hero: PropTypes.shape({
-                description: PropTypes.string,
-                title: PropTypes.string,
-                url: PropTypes.string,
-                height: PropTypes.number,
-                width: PropTypes.number,
-            }),
+            excerpt: PropTypes.string,
             featured: PropTypes.shape({
                 description: PropTypes.string,
+                height: PropTypes.number,
                 title: PropTypes.string,
                 url: PropTypes.string,
-                height: PropTypes.number,
                 width: PropTypes.number,
-            })
+            }),
+            hero: PropTypes.shape({
+                description: PropTypes.string,
+                height: PropTypes.number,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                width: PropTypes.number,
+            }),
+            id: PropTypes.number,
+            modified: PropTypes.string,
+            published: PropTypes.string,
+            slug: PropTypes.string,
+            title: PropTypes.string,
+            type: PropTypes.string,
         })
     ),
     projects: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.string,
-            hidden: PropTypes.bool,
-            excerpt: PropTypes.string,
-            hero: PropTypes.shape({
-                description: PropTypes.string,
-                title: PropTypes.string,
-                url: PropTypes.string,
-                height: PropTypes.number,
-                width: PropTypes.number,
-            }),
-            featured: PropTypes.shape({
-                description: PropTypes.string,
-                title: PropTypes.string,
-                url: PropTypes.string,
-                height: PropTypes.number,
-                width: PropTypes.number,
-            }),
+            agency: PropTypes.string,
+            client: PropTypes.string,
             content: PropTypes.shape({
-                data: PropTypes.object,
                 content: PropTypes.array,
+                data: PropTypes.object,
                 nodeType: PropTypes.string,
             }),
-            client: PropTypes.string,
-            agency: PropTypes.string,
             date: PropTypes.string,
-            role: PropTypes.string,
+            excerpt: PropTypes.string,
+            featured: PropTypes.shape({
+                description: PropTypes.string,
+                height: PropTypes.number,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                width: PropTypes.number,
+            }),
+            hero: PropTypes.shape({
+                description: PropTypes.string,
+                height: PropTypes.number,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                width: PropTypes.number,
+            }),
+            hidden: PropTypes.bool,
             id: PropTypes.number,
+            role: PropTypes.string,
             slug: PropTypes.string,
+            title: PropTypes.string,
             type: PropTypes.string,
         })
     ),
@@ -136,7 +136,7 @@ export async function getServerSideProps(context) {
     const projects = await ProjectAPI.fetchEntries();
     const session = await getSession(context)
 
-    return {props: { session, articles, projects } };
-};
+    return {props: { articles, projects, session } };
+}
 
 export default Home

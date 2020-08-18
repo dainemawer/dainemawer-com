@@ -58,32 +58,32 @@ export async function getServerSideProps() {
 Articles.propTypes = {
     articles: PropTypes.arrayOf(
         PropTypes.shape({
-            published: PropTypes.string,
-            modified: PropTypes.string,
-            id: PropTypes.number,
-            title: PropTypes.string,
-            excerpt: PropTypes.string,
             content: PropTypes.shape({
-                data: PropTypes.object,
                 content: PropTypes.array,
+                data: PropTypes.object,
                 nodeType: PropTypes.string,
             }),
-            slug: PropTypes.string,
-            type: PropTypes.string,
-            hero: PropTypes.shape({
-                description: PropTypes.string,
-                title: PropTypes.string,
-                url: PropTypes.string,
-                height: PropTypes.number,
-                width: PropTypes.number,
-            }),
+            excerpt: PropTypes.string,
             featured: PropTypes.shape({
                 description: PropTypes.string,
+                height: PropTypes.number,
                 title: PropTypes.string,
                 url: PropTypes.string,
-                height: PropTypes.number,
                 width: PropTypes.number,
-            })
+            }),
+            hero: PropTypes.shape({
+                description: PropTypes.string,
+                height: PropTypes.number,
+                title: PropTypes.string,
+                url: PropTypes.string,
+                width: PropTypes.number
+            }),
+            id: PropTypes.number,
+            modified: PropTypes.string,
+            published: PropTypes.string,
+            slug: PropTypes.string,
+            title: PropTypes.string,
+            type: PropTypes.string
         })
     ).isRequired
 }

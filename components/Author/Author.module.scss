@@ -9,32 +9,32 @@
 @import "../../styles/variables";
 
 .link {
-	color: $c-mine-shaft;
+  color: $c-mine-shaft;
 }
 
 .section {
-	align-items: center;
-	display: flex;
-	margin: $s-xxlarge auto $s-normal auto;
-	max-width: 660px;
+  align-items: center;
+  display: flex;
+  margin: $s-xxlarge auto $s-normal auto;
+  max-width: 660px;
 }
 
 .image {
-	border-radius: 50%;
-  	height: auto;
-	margin-bottom: 0;
-  	width: 80px;
+  border-radius: 50%;
+  height: auto;
+  margin-bottom: 0;
+  width: 80px;
 }
 
 .info {
-	margin-left: $s-normal;
+  margin-left: $s-normal;
 }
 
 .title {
-	font-size: $fs-lead;
-	margin: 0 0 $s-tiny 0;
+  font-size: $fs-lead;
+  margin: 0 0 $s-tiny 0;
 }
 
 .description {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }

@@ -31,7 +31,7 @@ const SignIn = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        signin('credentials', { username: inputs.username, password: inputs.password, callbackUrl: `${process.env.NEXT_PUBLIC_DOMAIN}/projects` })
+        signin('credentials', { callbackUrl: `${process.env.NEXT_PUBLIC_DOMAIN}/projects`, password: inputs.password, username: inputs.username, })
     }
 
     const handleChange = e => {

@@ -21,17 +21,17 @@ export default async (req, res) => {
     const endpoint = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
 
     const content = {
-        to: EMAIL,
+        dynamic_template_data: {
+            email,
+            message,
+            name,
+            subject
+        },
         from: EMAIL,
         subject: `${subject} | dainemawer.com`,
         templateId: TEMPLATE_ID,
-        dynamic_template_data: {
-            name,
-            email,
-            subject,
-            message
-        },
         text: message,
+        to: EMAIL
     };
 
     await fetch(endpoint, {
@@ -60,5 +60,4 @@ export default async (req, res) => {
             res.status(400).send('Message not sent.');
         }
     }
-
 }

@@ -37,24 +37,24 @@ const Details = ({ social }) => (
 );
 
 Item.propTypes = {
-    permalink: PropTypes.string,
+    icon: PropTypes.string,
     label: PropTypes.string,
-    icon: PropTypes.string
+    permalink: PropTypes.string
 }
 
 Item.defaultProps = {
-    permalink: '',
+    icon: '',
     label: '',
-    icon: ''
+    permalink: ''
 }
 
 Details.propTypes = {
     social: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number,
-            permalink: PropTypes.string,
-            label: PropTypes.string,
             icon: PropTypes.string,
+            id: PropTypes.number,
+            label: PropTypes.string,
+            permalink: PropTypes.string
         })
     ).isRequired
 }

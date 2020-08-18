@@ -9,29 +9,29 @@
 @import "../../styles/variables";
 
 .heading {
-	font-size: $fs-large;
-	margin: 0;
+  font-size: $fs-large;
+  margin: 0;
 }
 
 .list {
-	list-style-type: none;
-	padding: 0;
-	margin: $s-xlarge 0;
+  list-style-type: none;
+  padding: 0;
+  margin: $s-xlarge 0;
 }
 
 .list-item {
-	align-items: center;
-	display: flex;
-	margin-bottom: $s-normal;
+  align-items: center;
+  display: flex;
+  margin-bottom: $s-normal;
 }
 
 .link-item {
-	border-bottom: 1px solid $c-mine-shaft;
-	display: block;
-	font-size: $fs-lead;
-	padding-bottom: 5px;
+  border-bottom: 1px solid $c-mine-shaft;
+  display: block;
+  font-size: $fs-lead;
+  padding-bottom: 5px;
 }
 
 .image {
-	margin: 0 $s-normal 0 0;
+  margin: 0 $s-normal 0 0;
 }
