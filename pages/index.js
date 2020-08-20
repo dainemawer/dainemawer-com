@@ -9,7 +9,7 @@
  */
 
 // Dependencies
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
 import { useSession, getSession } from 'next-auth/client'
@@ -24,22 +24,14 @@ import Hero from '@components/Hero/Hero'
 import Layout from '@components/Layout/Layout'
 import Loading from '@components/Loading/Loading'
 import Meta from '@components/Meta/Meta'
-import Splash from '@components/Splash/Splash'
 
 // Dynamic Components
 const Masonry = dynamic(() => import('@components/Masonry/Masonry'), { loading: () => <Loading /> });
 
 const Home = ({ articles, projects }) => {
-    const [isLoading, setLoading] = useState(true);
     const [ session, ] = useSession()
     const filteredProjects = filterItems(projects, session, true);
     const items = [...articles, ...filteredProjects];
-
-    useEffect(() => {
-        setTimeout( () => {
-            setLoading(false)
-        }, 2000 )
-    })
 
     return (
         <>
@@ -48,16 +40,11 @@ const Home = ({ articles, projects }) => {
                 description="I build accessible front-ends for the industries biggest brands."
                 url="https://dainemawer.com"
             />
-            {isLoading ? (
-                <Splash />
-            ) : (
-                <Layout>
-                    <Hero title="Hej! I’m Daine." subtitle="I build accessible front-ends for the industries biggest brands." />
-                    {items && <Masonry items={items} />}
-                    <Banner background="rgba(185,141,79, 0.28)" />
-                </Layout>
-            )}
-
+            <Layout>
+                <Hero title="Hej! I’m Daine." subtitle="I build accessible front-ends for the industries biggest brands." />
+                {items && <Masonry items={items} />}
+                <Banner background="rgba(185,141,79, 0.28)" />
+            </Layout>
         </>
     );
 }

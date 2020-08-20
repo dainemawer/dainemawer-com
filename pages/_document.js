@@ -24,6 +24,8 @@ class MyDocument extends Document {
                     <meta name="theme-color" content="#ffffff" />
                     <meta name="msapplication-TileColor" content="#da532c" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                    <meta name="p:domain_verify" content="34f247a66d719c1a7b7392e3fce8d9d3"/>
+                    <meta name="yandex-verification" content="de2fda04891dda0d" />
 
                     <link rel="alternate" type="application/rss+xml" title="RSS for Daine Mawer" href="https://dainemawer.com/rss" />
 
