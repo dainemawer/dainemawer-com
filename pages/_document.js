@@ -45,11 +45,12 @@ class MyDocument extends Document {
                     <meta name="apple-mobile-web-app-capable" content="yes" />
                     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-
                     <link href='/manifest.json' rel='manifest' />
                     <meta name="msapplication-config" content="/browserconfig.xml" />
 
                     <TypographyStyle typography={typography} />
+
+                    <script async defer data-domain="dainemawer.com" src="https://plausible.io/js/plausible.js" />
 
                 </Head>
                 <body itemScope itemType='http://schema.org/WebPage'>
