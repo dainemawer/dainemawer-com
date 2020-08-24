@@ -9,12 +9,14 @@
 @import "../../styles/variables";
 
 .title {
+  color: var(--text);
   font-size: $fs-xxlarge;
   font-weight: $fw-book;
   margin: 0 0 0.25rem 0;
 }
 
 .sub-title {
+  color: var(--text);
   font-size: $fs-xxlarge;
   line-height: 1.25;
   max-width: 530px;

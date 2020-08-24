@@ -5,6 +5,11 @@
   padding: 0 0 2rem 0;
 }
 
+.time,
+.svg {
+  color: var(--text);
+}
+
 .list {
   display: flex;
   list-style-type: none;

@@ -17,6 +17,7 @@
 }
 
 .list-item {
+  color: var(--text);
   margin: 0 $s-normal 1rem 0;
 
   &:last-child {

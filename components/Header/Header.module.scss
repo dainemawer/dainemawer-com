@@ -23,10 +23,26 @@
   }
 }
 
+.darkMode {
+  background-color: transparent;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+  }
+}
+
 .logo-link {
   display: flex;
   opacity: 1;
   transition: opacity 250ms ease-in-out;
+
+  svg {
+    color: var(--text);
+  }
 
   &:hover,
   &:focus {
@@ -66,7 +82,7 @@
 
 .navigation-link {
   border-bottom: 1px solid transparent;
-  color: $c-mine-shaft;
+  color: var(--text);
   font-family: $ff-family-primary;
   font-size: $fs-normal;
   font-weight: $fw-lead;
@@ -80,7 +96,7 @@
   &:hover,
   &:focus,
   &.is-active {
-    border-bottom-color: $c-mine-shaft;
+    border-bottom-color: var(--text);
     outline: 0;
   }
 

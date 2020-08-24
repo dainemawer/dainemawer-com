@@ -15,7 +15,8 @@
 .button {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid $c-mine-shaft;
+  border-bottom: 1px solid var(--text);
+  color: var(--text);
   cursor: pointer;
   font-size: $fs-lead;
   padding: 0 0 5px 0;
