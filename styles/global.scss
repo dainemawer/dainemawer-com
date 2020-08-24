@@ -9,16 +9,44 @@
 @import "~normalize.css";
 @import "variables";
 
+:root {
+  --body: #{$c-white};
+  --text: #{$c-mine-shaft};
+  --rule: #{$c-mercury};
+}
+
+.dark-mode {
+  --body: #{$c-cod-grey};
+  --text: #{$c-white};
+  --rule: #{$c-white};
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.locked {
-  overflow: hidden;
+body {
+  background-color: var(--body);
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+
+  &.locked {
+    overflow: hidden;
+  }
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
 }
 
 .page-content p {
+  color: var(--text);
   font-size: $fs-lead;
   line-height: 1.5;
 }
@@ -35,11 +63,13 @@ body.locked {
 }
 
 .page-project p {
+  color: var(--text);
   font-size: $fs-lead;
   line-height: 1.5;
 }
 
 .page-article p {
+  color: var(--text);
   font-size: $fs-lead;
   line-height: 1.5;
   margin: 0 auto 1rem auto;

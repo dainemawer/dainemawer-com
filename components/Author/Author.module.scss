@@ -9,7 +9,7 @@
 @import "../../styles/variables";
 
 .link {
-  color: $c-mine-shaft;
+  color: var(--text);
 }
 
 .section {

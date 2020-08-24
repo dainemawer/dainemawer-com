@@ -28,13 +28,14 @@
 }
 
 .rule {
-  background-color: $c-mercury;
+  background-color: var(--rule);
   height: 1px;
   margin: 0 auto;
   max-width: 100%;
 }
 
 .email {
+  color: var(--text);
   display: flex;
   font-family: $ff-family-primary;
   font-size: $fs-large;
@@ -77,6 +78,7 @@
   position: relative;
 
   &::after {
+    color: var(--text);
     content: " / ";
     display: inline-block;
     text-align: center;
@@ -95,7 +97,7 @@
 
 .navigation-link {
   border-bottom: 1px solid transparent;
-  color: $c-mine-shaft;
+  color: var(--text);
   font-family: 'Work Sans', sans-serif;
   font-size: $fs-small;
   font-weight: $fw-normal;
@@ -105,7 +107,7 @@
   &:hover,
   &:focus,
   &.is-active {
-    border-bottom-color: $c-mine-shaft;
+    border-bottom-color: var(--text);
     outline: 0;
   }
 }
@@ -114,7 +116,7 @@
   background-color: transparent;
   border: 0;
   border-bottom: 1px solid transparent;
-  color: $c-nobel;
+  color: var(--text);
   cursor: pointer;
   font-size: $fs-small;
   font-weight: $fw-normal;
@@ -131,12 +133,13 @@
 
 .is-active {
   border-bottom-color: $c-mine-shaft;
-  color: $c-mine-shaft;
+  color: var(--text);
 }
 
 .location {
   align-items: center;
   display: flex;
+  color: var(--text);
   font-size: $fs-small;
   justify-content: flex-end;
   margin: 0;

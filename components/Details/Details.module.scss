@@ -26,7 +26,8 @@
 }
 
 .link-item {
-  border-bottom: 1px solid $c-mine-shaft;
+  color: var(--text);
+  border-bottom: 1px solid var(--text);
   display: block;
   font-size: $fs-lead;
   padding-bottom: 5px;

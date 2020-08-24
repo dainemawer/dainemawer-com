@@ -44,11 +44,12 @@
 .certification-link {
   background-image: none;
   border-bottom: 1px solid $c-mine-shaft;
-  color: $c-mine-shaft;
+  color: var(--text);
   font-weight: $fw-bold;
 }
 
 .certification-item {
+  color: var(--text);
   font-size: $fs-normal;
   margin-bottom: $s-medium;
 

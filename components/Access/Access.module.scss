@@ -17,13 +17,14 @@
 }
 
 .paragraph {
+  color: var(--text);
   font-size: 1.125rem;
 }
 
 .button {
   background-image: none;
-  border-bottom: 1px solid $c-mine-shaft;
-  color: $c-mine-shaft;
+  border-bottom: 1px solid var(--text);
+  color: var(--text);
   font-size: 1.25rem;
   padding-bottom: 5px;
 }

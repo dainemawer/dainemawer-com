@@ -15,6 +15,7 @@
 }
 
 .paragraph {
+  color: var(--text);
   font-size: $fs-lead;
   line-height: 1.25;
   max-width: 420px;
@@ -22,14 +23,14 @@
 
 .permalink {
   border-bottom: 1px solid transparent;
-  color: $c-mine-shaft;
+  color: var(--text);
   font-size: $fs-lead;
   transition: border-bottom-color 250ms ease-in-out;
   padding-bottom: 5px;
 
   &:hover,
   &:focus {
-    border-bottom-color: $c-mine-shaft;
+    border-bottom-color: var(--text);
     outline: 0;
   }
 }

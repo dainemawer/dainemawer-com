@@ -10,17 +10,19 @@
  */
 
 // Dependencies
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import {useRouter} from 'next/router'
 import FocusLock from 'react-focus-lock'
 import clsx from 'clsx'
 import Link from 'next/link'
 import {signout, useSession} from 'next-auth/client'
+import Context from '@context/context'
 
 // Styles
 import styles from './Header.module.scss'
 
 const Header = () => {
+    const { isDarkMode, toggleDarkMode } = useContext(Context);
     const [open, setOpen] = useState(false)
     const [ session, ] = useSession()
     const node = useRef(null)
@@ -72,7 +74,7 @@ const Header = () => {
                 <a className={styles['logo-link']} itemProp="url" href="/">
                     <svg width="33" height="35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 35" role="img" aria-labelledby="logo-title">
                         <title id="logo-title">Daine Mawer Logo</title>
-                        <g fill="#313131" fillRule="evenodd">
+                        <g fill="currentColor" fillRule="evenodd">
                             <path d="M33 29h-6.37V9.776L19.027 29h-5.26L6.164 10.021V29H0V0h8.466l8.013 19.592L24.082 0H33z"/>
                             <path d="M33 6h-6.37v19.224L19.027 6h-5.26L6.164 24.979V6H0v29h8.466l8.013-19.592L24.082 35H33z"/>
                         </g>
@@ -108,6 +110,9 @@ const Header = () => {
                             <Link href="/contact" passHref>
                                 <a className={clsx(styles['navigation-link'], router.pathname === `/contact` && styles['is-active'] )}>Contact</a>
                             </Link>
+                        </li>
+                        <li className={styles['navigation-item']}>
+                            <button className={styles.darkMode} onClick={() => toggleDarkMode()} type="button">{isDarkMode ? '☀' : '☾'}</button>
                         </li>
                     </ul>
                 </FocusLock>

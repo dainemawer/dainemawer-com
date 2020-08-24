@@ -6,6 +6,7 @@ const nextConfig = {
         config.resolve.alias['@data'] = path.join(__dirname, 'data');
         config.resolve.alias['@lib'] = path.join(__dirname, 'lib');
         config.resolve.alias['@styles'] = path.join(__dirname, 'styles');
+        config.resolve.alias['@context'] = path.join(__dirname, 'context');
         return config;
     },
 }
