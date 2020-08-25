@@ -54,6 +54,7 @@ class MyDocument extends Document {
 
                 </Head>
                 <body itemScope itemType='http://schema.org/WebPage'>
+                <script type="text/javascript" src="/noflash.js" />
                 <Main />
                 <NextScript />
                 <noscript>

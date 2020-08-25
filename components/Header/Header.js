@@ -112,7 +112,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className={styles['navigation-item']}>
-                            <button className={styles.darkMode} onClick={() => toggleDarkMode()} type="button">{isDarkMode ? '☀' : '☾'}</button>
+                            <button className={styles.darkMode} onClick={() => toggleDarkMode()} type="button">{isDarkMode ? <span>🌕</span> : <span>🌒</span>}</button>
                         </li>
                     </ul>
                 </FocusLock>
