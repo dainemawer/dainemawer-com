@@ -28,6 +28,7 @@
 }
 
 .input {
+  appearance: none;
   border: 1px solid $c-silver;
   padding: 1rem;
   transition: border-color 250ms ease-in;
@@ -40,6 +41,7 @@
 }
 
 .textarea {
+  appearance: none;
   border: 1px solid $c-silver;
   padding: $s-normal 10rem $s-normal $s-normal;
   resize: none;
@@ -89,13 +91,35 @@
 }
 
 .article {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
   padding: $s-normal 0;
 
-  @media (min-width: $bp-medium) {
-    grid-gap: $s-xlarge;
-    grid-template-columns: 4fr 8fr;
+  > div:nth-child(1) {
+    flex: 0 1 100%;
+
+    @media (min-width: $bp-medium) {
+      flex: 0 1 calc(40% - 8px);
+    }
+  }
+
+  > article:nth-child(1) {
+    flex: 0 1 100%;
+
+    @media (min-width: $bp-medium) {
+      flex: 0 1 calc(60% - 8px);
+    }
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $bp-medium) {
+      grid-gap: $s-xlarge;
+      grid-template-columns: 4fr 8fr;
+    }
   }
 }

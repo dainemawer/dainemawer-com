@@ -112,7 +112,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className={styles['navigation-item']}>
-                            <button className={styles.darkMode} onClick={() => toggleDarkMode()} type="button">{isDarkMode ? <span>🌕</span> : <span>🌒</span>}</button>
+                            <button type="button" aria-label="Toggle Dark Mode" className={styles.darkMode} onClick={() => toggleDarkMode()} type="button">{isDarkMode ? <span role="img"><span className="screen-reader-text">Toggle Light Mode</span>🌕</span> : <span role="img"><span className="screen-reader-text">Toggle Dark Mode</span>🌒</span>}</button>
                         </li>
                     </ul>
                 </FocusLock>
