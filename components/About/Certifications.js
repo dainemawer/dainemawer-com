@@ -19,7 +19,7 @@ const Certifications = ({ title }) => (
     <section className={styles.section}>
         {title && <h3 className={styles.title}>{title}</h3>}
         <ul className={styles.list}>
-            <li className={styles['certification-item']}>CS50 - Introduction to Computer Science |&nbsp;
+            <li className={styles['certification-item']}>CS50 - Intro to Computer Science |&nbsp;
                 <a className={styles['certification-link']} href="https://www.edx.org/course/cs50s-introduction-to-computer-science" rel="noopener noreferrer">
                     Link <span className="screen-reader-text">to CS50 - Introduction to Computer Science</span>
                 </a>

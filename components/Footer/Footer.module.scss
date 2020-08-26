@@ -23,6 +23,9 @@
 }
 
 .grid {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
   padding: $s-normal 0;
 
   @supports (display: grid) {
@@ -56,6 +59,7 @@
 .navigation {
   display: flex;
   flex-direction: column;
+  flex: 0 1 180px;
   justify-content: flex-start;
   margin-bottom: 0;
 }

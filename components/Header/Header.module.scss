@@ -9,6 +9,9 @@
 @import "../../styles/variables";
 
 .header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 960px;
   padding: $s-xlarge $s-large;

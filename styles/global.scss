@@ -51,7 +51,9 @@ h6 {
   line-height: 1.5;
 }
 
-.page-content a {
+.page-content a,
+.page-project a,
+.page-article a {
   border-bottom: 1px solid transparent;
   font-weight: bold;
   transition: border-bottom-color 250ms ease-in-out;
@@ -124,11 +126,11 @@ h6 {
 }
 
 #nprogress .bar {
-  background: #313131 !important;
+  background: var(--text) !important;
   height: 3px;
 }
 
 #nprogress .spinner-icon {
-  border-top-color: #313131;
-  border-left-color: #313131;
+  border-top-color: var(--text);
+  border-left-color: var(--text);
 }

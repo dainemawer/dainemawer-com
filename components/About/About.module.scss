@@ -9,13 +9,36 @@
 @import "../../styles/variables";
 
 .grid {
+  align-items: flex-start;
   display: grid;
-  grid-gap: $s-xlarge;
-  grid-template-columns: 1fr;
+  justify-content: space-between;
 
-  @media (min-width: $bp-medium) {
-    grid-template-columns: 1fr 1fr;
+  > div:nth-child(1) {
+    flex: 0 1 100%;
+
+    @media (min-width: $bp-medium) {
+      flex: 0 1 calc(50% - 8px);
+    }
   }
+
+  > div:nth-child(2) {
+    flex: 0 1 100%;
+
+    @media (min-width: $bp-medium) {
+      flex: 0 1 calc(50% - 8px);
+    }
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: $s-xlarge;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $bp-medium) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
 }
 
 .image {
