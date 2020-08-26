@@ -13,6 +13,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  @media (min-width: $bp-large) {
+    padding: 0;
+  }
+
   @supports (display: grid) {
     display: grid;
     grid-template-columns: 1fr;
@@ -22,12 +26,7 @@
       grid-gap: 1.5rem;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-auto-rows: 250px;
-
     }
-  }
-
-  @media (min-width: $bp-large) {
-    padding: 0;
   }
 }
 
