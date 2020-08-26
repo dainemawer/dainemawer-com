@@ -136,13 +136,17 @@
   color: var(--text);
 }
 
+.widgetHeading {
+  margin-bottom: 1.5rem;
+}
+
 .location {
   align-items: center;
   display: flex;
   color: var(--text);
   font-size: $fs-small;
   justify-content: flex-start;
-  margin: 1.5rem 0 0 0;
+  margin: 1.5rem 0;
 }
 
 .menu {

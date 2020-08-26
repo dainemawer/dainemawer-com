@@ -9,13 +9,23 @@
 @import "../../styles/variables";
 
 .section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem 1rem;
+
+    @media (min-width: $bp-large) {
+      grid-gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-auto-rows: 250px;
+
+    }
+  }
 
   @media (min-width: $bp-large) {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 250px;
     padding: 0;
   }
 }

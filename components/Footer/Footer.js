@@ -20,13 +20,10 @@ import styles from './Footer.module.scss'
 
 const Footer = () => (
     <footer className={styles.container} itemScope="" itemType="http://schema.org/WPFooter" role="contentinfo">
+        <hr className={styles.rule} />
         <div className={styles.grid}>
-            <div>
-                <h4>Welcome</h4>
-                <p>Description</p>
-            </div>
             <nav className={styles.navigation} itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Footer Social Navigation">
-                <h4>Social</h4>
+                <h4 className={styles.widgetHeading}>Social</h4>
                 <ul className={styles.menu}>
                     <li className={styles['navigation-item']}>
                         <a className={styles['navigation-link']} href="https://twitter.com/dainemawer" target="_blank" rel="noopener noreferrer">Twitter</a>
@@ -43,7 +40,7 @@ const Footer = () => (
                 </ul>
             </nav>
             <nav className={styles.navigation} itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Footer Tertiary Navigation">
-                <h4>Links</h4>
+                <h4 className={styles.widgetHeading}>Links</h4>
                 <ul className={styles.menu}>
                     <li className={styles['navigation-item']}>
                         <Link href="/privacy" passHref>
@@ -67,8 +64,26 @@ const Footer = () => (
                     </li>
                 </ul>
             </nav>
+            <div className={styles.navigation}>
+                <h4 className={styles.widgetHeading}>Contact</h4>
+                <ul className={styles.menu}>
+                    <li className={styles['navigation-item']}>
+                        <a className={styles['navigation-link']} href="mailto:hello@dainemawer.com">Email</a>
+                    </li>
+                    <li className={styles['navigation-item']}>
+                        <Link href="/contact" passHref>
+                            <a className={styles['navigation-link']}>Form</a>
+                        </Link>
+                    </li>
+                    <li className={styles['navigation-item']}>
+                        <Link href="/form" passHref>
+                            <a className={styles['navigation-link']}>Chat</a>
+                        </Link>
+                    </li>
+                </ul>
+            </div>
             <nav className={clsx(styles.navigation, styles['language-select'])}itemScope="itemscope" itemType="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Language Selector">
-                <h4>Language</h4>
+                <h4 className={styles.widgetHeading}>Language</h4>
                 <ul className={styles.menu}>
                     <li className={styles['navigation-item']}>
                         <button type="button" className={clsx(styles['navigation-button'], styles['is-active'])}>English</button>
@@ -78,14 +93,9 @@ const Footer = () => (
                     </li>
                 </ul>
             </nav>
-
         </div>
         <hr className={styles.rule} />
         <p className={styles.location}>🌍 Cape Town, South Africa</p>
-        <div className={clsx(styles.grid, styles.colophon)}>
-
-
-        </div>
     </footer>
 );
 
