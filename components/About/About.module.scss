@@ -10,7 +10,7 @@
 
 .grid {
   align-items: flex-start;
-  display: grid;
+  display: flex;
   justify-content: space-between;
 
   > div:nth-child(1) {
