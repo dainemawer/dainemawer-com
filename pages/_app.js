@@ -15,6 +15,9 @@ import NProgress from 'nprogress'
 import Router from 'next/router'
 import { Provider } from 'next-auth/client'
 
+import 'typeface-work-sans'
+import 'typeface-quattrocento-sans'
+
 // 📇 Context
 import Context from '@context/context';
 

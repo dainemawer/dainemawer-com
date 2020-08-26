@@ -11,10 +11,14 @@
 .container {
   margin: 0 auto;
   max-width: 960px;
-  padding: $s-xlarge $s-large $s-large $s-large;
+  padding: $s-xlarge;
 
   @media (min-width: $bp-medium) {
-    padding: $s-xlarge $s-normal;
+    padding: $s-xlarge;
+  }
+
+  @media (min-width: $bp-large) {
+    padding: $s-xlarge $s-normal 0 $s-normal;
   }
 }
 
@@ -23,7 +27,7 @@
 
   @supports (display: grid) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 }
 
@@ -50,8 +54,8 @@
 }
 
 .navigation {
-  align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   margin-bottom: 0;
 }
@@ -74,16 +78,8 @@
 }
 
 .navigation-item {
-  margin-bottom: 0;
+  margin-bottom: 0.875rem;
   position: relative;
-
-  &::after {
-    color: var(--text);
-    content: " / ";
-    display: inline-block;
-    text-align: center;
-    width: 1.5rem;
-  }
 
   &:last-child {
     margin-right: 0;
@@ -141,13 +137,14 @@
   display: flex;
   color: var(--text);
   font-size: $fs-small;
-  justify-content: flex-end;
-  margin: 0;
+  justify-content: flex-start;
+  margin: 1.5rem 0 0 0;
 }
 
 .menu {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
+  flex-direction: column;
   list-style-type: none;
   margin: 0;
   padding: 0;

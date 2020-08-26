@@ -24,7 +24,7 @@ const Masonry = ({ items }) => (
             <article className={styles.card} key={item.id}>
                 <Link as={`/${item.type}/${item.slug}`} href={{ pathname: `/${item.type}/[slug]`, query: {post: item.slug}}} passHref>
                     <a className={styles.permalink}>
-                        <picture>
+                        <picture className={styles.picture}>
                             <source srcSet={`${item.featured.url}?fm=webp&q=60`} type='image/webp' />
                             <source srcSet={`${item.featured.url}?q=60`} type='image/jpg' />
                             <img className={styles.image} src={`${item.featured.url}?q=60`} loading="lazy" alt={item.featured.description} />

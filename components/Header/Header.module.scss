@@ -14,6 +14,10 @@
   padding: $s-xlarge $s-large;
 
   @media (min-width: $bp-medium) {
+    padding: $s-xlarge $s-xlarge;
+  }
+
+  @media (min-width: $bp-large) {
     padding: $s-xlarge $s-normal;
   }
 
@@ -116,7 +120,7 @@
 
 .menu {
   align-items: center;
-  background-color: $c-white;
+  background-color: var(--body);
   box-shadow: 0 0 40px rgba($c-black, 0.15);
   height: 100vh;
   list-style-type: none;
@@ -184,6 +188,10 @@
 
 .icon {
   pointer-events: none;
+}
+
+.path {
+  fill: var(--text);
 }
 
 .signout {
